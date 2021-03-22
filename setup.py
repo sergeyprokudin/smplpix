@@ -2,12 +2,12 @@
 from setuptools import setup
 
 setup(
-    name="unet",
+    name="smplpix",
     version=1.0,
-    description="Customized implementation of the U-Net in PyTorch",
-    install_requires=["torch"],
-    author="Alexandre Milesi",
+    description="SMPLpix: Neural Avatars from Deformable 3D models",
+    install_requires=["torch", "torchvision"],
+    author="Sergey Prokudin",
     license="GNU",
-    author_email="alexandre.milesi@etu.utc.fr",
-    packages=["unet"]
+    author_email="sergey.prokudin@gmail.com",
+    packages=["smplpix"]
 )
