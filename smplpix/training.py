@@ -6,7 +6,7 @@ from tqdm import tqdm
 import torch
 import torch.nn as nn
 from torchvision.utils import save_image
-from vgg import Vgg16
+from .vgg import Vgg16
 
 
 def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
