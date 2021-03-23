@@ -52,7 +52,7 @@ def evaluate(model, data_loader, res_dir, device, vgg=None, report_loss=True):
     criterion_l1 = nn.L1Loss().to(device)
     losses = []
 
-    for batch_idx, (x, ytrue, img_names) in tqdm(enumerate(data_loader)):
+    for batch_idx, (x, ytrue, img_names) in enumerate(data_loader):
 
         x, ytrue = x.to(device), ytrue.to(device)
 
