@@ -38,13 +38,14 @@ def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
         if epoch_id % eval_every_nth_epoch == 0:
             print("\ncurrent epoch: %d" % epoch_id)
             eval_dir = os.path.join(log_dir, 'val_preds_%04d' % epoch_id)
-            val_loss = evaluate(model, val_dataloader, eval_dir, device, vgg)
+            val_loss = evaluate(model, val_dataloader, eval_dir, device, vgg, show_progress=False)
             sched.step(val_loss)
 
     return
 
 
-def evaluate(model, data_loader, res_dir, device, vgg=None, report_loss=True):
+def evaluate(model, data_loader, res_dir, device,
+             vgg=None, report_loss=True, show_progress=True):
 
     model.eval()
 
@@ -56,7 +57,12 @@ def evaluate(model, data_loader, res_dir, device, vgg=None, report_loss=True):
     criterion_l1 = nn.L1Loss().to(device)
     losses = []
 
-    for batch_idx, (x, ytrue, img_names) in enumerate(data_loader):
+    if show_progress:
+        data_seq = tqdm(enumerate(data_loader))
+    else:
+        data_seq = enumerate(data_loader)
+
+    for batch_idx, (x, ytrue, img_names) in data_seq:
 
         x, ytrue = x.to(device), ytrue.to(device)
 
