@@ -24,7 +24,7 @@ def get_smplpix_arguments():
                         help='number of channels in the input images',
                         default=3)
     parser.add_argument('--n_output_channels',
-                        dest='n_input_channels',
+                        dest='n_output_channels',
                         type=int,
                         help='number of channels in the input images',
                         default=3)

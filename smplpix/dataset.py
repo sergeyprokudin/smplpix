@@ -12,7 +12,10 @@ from torchvision.transforms import functional as tvf
 
 class SMPLPixDataset(Dataset):
 
-    def __init__(self, input_dir, output_dir=None,
+    def __init__(self, input_dir,
+                 output_dir=None,
+                 n_input_channels=3,
+                 n_output_channels=3,
                  downsample_factor=1,
                  perform_augmentation=False,
                  augmentation_probability=0.75,
@@ -33,6 +36,8 @@ class SMPLPixDataset(Dataset):
 
         self.input_dir = input_dir
         self.output_dir = output_dir
+        self.n_input_channels = n_input_channels
+        self.n_output_channels = n_output_channels
         self.samples = sorted(os.listdir(self.output_dir))
         self.downsample_factor = downsample_factor
         self.perform_augmentation = perform_augmentation
@@ -92,7 +97,7 @@ class SMPLPixDataset(Dataset):
 
         x = torch.Tensor(np.asarray(x) / 255).transpose(0, 2)
         y = torch.Tensor(np.asarray(y) / 255).transpose(0, 2)
-        x = x[0:3, ::self.downsample_factor, ::self.downsample_factor]
-        y = y[0:3, ::self.downsample_factor, ::self.downsample_factor]
+        x = x[0:self.n_input_channels, ::self.downsample_factor, ::self.downsample_factor]
+        y = y[0:self.n_output_channels, ::self.downsample_factor, ::self.downsample_factor]
 
         return x, y, img_name

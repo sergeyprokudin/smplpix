@@ -38,7 +38,10 @@ def main():
     dataset = SMPLPixDataset(input_dir=args.input_dir,
                              output_dir=args.output_dir,
                              perform_augmentation=True,
-                             downsample_factor=args.downsample_factor)
+                             downsample_factor=args.downsample_factor,
+                             n_input_channels=args.n_input_channels,
+                             n_output_channels=args.n_output_channels)
+
     dataloader = DataLoader(dataset, batch_size=args.batch_size)
 
     print("defining the neural renderer model (U-Net)...")
@@ -54,7 +57,10 @@ def main():
     print("processing test AMASS renders...")
     test_dataset = SMPLPixDataset(input_dir=args.input_dir,
                                   downsample_factor=args.downsample_factor,
-                                  perform_augmentation=False)
+                                  perform_augmentation=False,
+                                  n_input_channels=args.n_input_channels,
+                                  n_output_channels=args.n_output_channels
+                                  )
     test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size)
     final_renders_path = os.path.join(args.workdir, 'final_test_renders')
     _ = evaluate(unet, test_dataloader, final_renders_path, args.device)
