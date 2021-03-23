@@ -33,6 +33,7 @@ def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
             optimizer.step()
 
         if epoch_id % eval_every_nth_epoch == 0:
+            print("current epoch: %d" % epoch_id)
             eval_dir = os.path.join(log_dir, 'val_preds_%04d' % epoch_id)
             val_loss = evaluate(model, val_dataloader, eval_dir, device, vgg)
             sched.step(val_loss)
