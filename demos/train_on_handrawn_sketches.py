@@ -52,7 +52,6 @@ def main():
     # we will now use the network trained on 20 sketches to convert the rest of AMASS renders
     print("processing test AMASS renders...")
     test_dataset = SMPLPixDataset(input_dir=args.input_dir,
-                                  output_dir=args.input_dir,
                                   downsample_factor=args.downsample_factor,
                                   perform_augmentation=False)
     test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size)
