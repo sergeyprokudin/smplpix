@@ -1,5 +1,5 @@
 # pytorch U-Net model (https://arxiv.org/abs/1505.04597)
-# the code is taken from, with some minimal refactoring:
+# the code is taken from (with some minimal refactoring):
 # https://github.com/milesial/Pytorch-UNet
 
 import torch

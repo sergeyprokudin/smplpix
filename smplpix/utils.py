@@ -1,4 +1,7 @@
 # helper functions for downloading and preprocessing SMPLpix training data
+#
+# (c) Sergey Prokudin (sergey.prokudin@gmail.com), 2021
+#
 
 import os
 

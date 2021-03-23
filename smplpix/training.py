@@ -1,4 +1,7 @@
-# training and evaluation loop functions
+# SMPLpix training and evaluation loop functions
+#
+# (c) Sergey Prokudin (sergey.prokudin@gmail.com), 2021
+#
 
 import os
 import numpy as np

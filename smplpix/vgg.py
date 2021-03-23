@@ -1,5 +1,7 @@
-# extract perceptual features from the pre-trained Vgg16 network (https://arxiv.org/abs/1603.08155)
-# slightly modified code taken from the gist of W. Falcon:
+# extract perceptual features from the pre-trained Vgg16 network
+# these features are used for the perceptual loss function (https://arxiv.org/abs/1603.08155)
+#
+# based on the code snippet of W. Falcon:
 # https://gist.github.com/williamFalcon/1ee773c159ff5d76d47518653369d890
 
 import torch

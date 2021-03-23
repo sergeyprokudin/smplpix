@@ -1,4 +1,7 @@
-# basic dataset class used in the SMPLpix experiments
+# SMPLpix basic dataset class used in all experiments
+#
+# (c) Sergey Prokudin (sergey.prokudin@gmail.com), 2021
+#
 
 import os
 import numpy as np
