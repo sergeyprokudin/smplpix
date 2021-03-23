@@ -74,13 +74,13 @@ class SMPLPixDataset(Dataset):
                            angle=angle,
                            translate=translate,
                            scale=scale,
-                           shear=0, fillcolor=self.input_fill_color)
+                           shear=0, fill=self.input_fill_color)
 
             y = tvf.affine(y,
                            angle=angle,
                            translate=translate,
                            scale=scale,
-                           shear=0, fillcolor=self.output_fill_color)
+                           shear=0, fill=self.output_fill_color)
 
         return x, y
 
