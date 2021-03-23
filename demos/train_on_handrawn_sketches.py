@@ -13,11 +13,11 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-from smplpix.unet import UNet
-from smplpix.dataset import SMPLPixDataset
-from smplpix.utils import get_amass_cmu_sketch_data, generate_mp4
-from smplpix.training import train, evaluate
 from smplpix.args import get_smplpix_arguments
+from smplpix.utils import get_amass_cmu_sketch_data, generate_mp4
+from smplpix.dataset import SMPLPixDataset
+from smplpix.unet import UNet
+from smplpix.training import train, evaluate
 
 
 def main():
@@ -42,7 +42,7 @@ def main():
     dataloader = DataLoader(dataset, batch_size=args.batch_size)
 
     print("defining the neural renderer model (U-Net)...")
-    unet = UNet(n_channels=3, n_classes=3).to(args.device)
+    unet = UNet(n_channels=args.n_input_channels, n_classes=args.n_output_channels).to(args.device)
 
     print("starting training...")
     train(model=unet, train_dataloader=dataloader, val_dataloader=dataloader,
