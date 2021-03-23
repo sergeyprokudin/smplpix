@@ -47,7 +47,8 @@ def main():
     print("starting training...")
     train(model=unet, train_dataloader=dataloader, val_dataloader=dataloader,
           log_dir=log_dir, ckpt_path=ckpt_path, device=args.device, n_epochs=args.n_epochs,
-          eval_every_nth_epoch=args.eval_every_nth_epoch, sched_patience=args.sched_patience)
+          eval_every_nth_epoch=args.eval_every_nth_epoch, sched_patience=args.sched_patience,
+          init_lr=args.learning_rate)
 
     # we will now use the network trained on 20 sketches to convert the rest of AMASS renders
     print("processing test AMASS renders...")

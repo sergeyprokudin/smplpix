@@ -47,6 +47,11 @@ def get_smplpix_arguments():
                         type=int,
                         help='number of epochs to train the network for',
                         default=500)
+    parser.add_argument('--learning_rate',
+                        dest='learning_rate',
+                        type=int,
+                        help='initial learning rate',
+                        default=1.0e-4)
     parser.add_argument('--eval_every_nth_epoch',
                         dest='eval_every_nth_epoch',
                         type=int,
@@ -55,7 +60,7 @@ def get_smplpix_arguments():
     parser.add_argument('--sched_patience',
                         dest='sched_patience',
                         type=int,
-                        help='amount of validation evaluations with no improvement after which LR will be reduced',
+                        help='amount of validation set evaluations with no improvement after which LR will be reduced',
                         default=5)
     args = parser.parse_args()
 
