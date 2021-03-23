@@ -72,11 +72,11 @@ def evaluate(model, data_loader, res_dir, device,
 
         for fid in range(0, len(img_names)):
             if save_input:
-                res_image = torch.cat([x[fid].transpose(1, 2), ypred[fid].transpose(1, 2)], dim=1)
+                res_image = torch.cat([x[fid].transpose(1, 2), ypred[fid].transpose(1, 2)], dim=2)
             else:
                 res_image = ypred[fid].transpose(1, 2)
             if save_target:
-                res_image = torch.cat([res_image, ytrue[fid].transpose(1, 2)], dim=1)
+                res_image = torch.cat([res_image, ytrue[fid].transpose(1, 2)], dim=2)
 
             save_image(res_image, os.path.join(res_dir, '%s' % img_names[fid]))
 
