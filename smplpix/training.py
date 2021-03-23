@@ -22,8 +22,6 @@ def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
     for epoch_id in tqdm(range(0, n_epochs)):
 
         model.train()
-
-        print("current epoch: %d" % epoch_id)
         torch.save(model.state_dict(), ckpt_path)
 
         for batch_idx, (x, ytrue, img_names) in enumerate(train_dataloader):
@@ -42,7 +40,7 @@ def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
     return
 
 
-def evaluate(model, data_loader, res_dir, device, vgg=None):
+def evaluate(model, data_loader, res_dir, device, vgg=None, report_loss=True):
 
     model.eval()
 
@@ -54,7 +52,7 @@ def evaluate(model, data_loader, res_dir, device, vgg=None):
     criterion_l1 = nn.L1Loss().to(device)
     losses = []
 
-    for batch_idx, (x, ytrue, img_names) in enumerate(data_loader):
+    for batch_idx, (x, ytrue, img_names) in tqdm(enumerate(data_loader)):
 
         x, ytrue = x.to(device), ytrue.to(device)
 
@@ -64,9 +62,10 @@ def evaluate(model, data_loader, res_dir, device, vgg=None):
         for fid in range(0, len(img_names)):
             save_image(ypred[fid].transpose(1, 2), os.path.join(res_dir, '%s' % img_names[fid]))
 
-    loss = np.mean(losses)
+    avg_loss = np.mean(losses)
 
-    print("\nVGG loss: %f" % np.mean(losses))
+    if report_loss:
+        print("\nmean VGG loss: %f" % np.mean(avg_loss))
     print("images saved at %s" % res_dir)
 
-    return loss
+    return avg_loss
