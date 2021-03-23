@@ -46,8 +46,14 @@ def get_amass_cmu_sketch_data(workdir):
 
 def generate_mp4(image_dir, video_path, img_ext='png', frame_rate=15):
 
-    exit_code = os.system("ffmpeg -framerate %d -pattern_type glob "
-                          "-i \'%s/*.%s\' -vcodec h264 -an -b:v 10M -pix_fmt yuv420p -an \'%s\'" %
-                          (frame_rate, image_dir, img_ext, video_path))
+    ffmpeg_cmd = "ffmpeg -framerate %d -pattern_type glob " \
+                "-i \'%s/*.%s\' -vcodec h264 -an -b:v 10M -pix_fmt yuv420p -an \'%s\'" % \
+                (frame_rate, image_dir, img_ext, video_path)
+
+    print("executing %s" % ffmpeg_cmd)
+    exit_code = os.system(ffmpeg_cmd)
+
+    if exit_code != 0:
+        print("something went wrong during video generation. Make sure you have ffmpeg tool installed.")
 
     return exit_code

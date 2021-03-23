@@ -15,9 +15,19 @@ def get_smplpix_arguments():
                         default=None)
     parser.add_argument('--output_dir',
                         dest='output_dir',
-                        help='directory with corresponding target images to the network (e.g. real photos '
-                             'corresponding with the same camera parameters)',
+                        help='directory with corresponding target images to the network (e.g. real photos'
+                             'with the same camera parameters)',
                         default=None)
+    parser.add_argument('--n_input_channels',
+                        dest='n_input_channels',
+                        type=int,
+                        help='number of channels in the input images',
+                        default=3)
+    parser.add_argument('--n_output_channels',
+                        dest='n_input_channels',
+                        type=int,
+                        help='number of channels in the input images',
+                        default=3)
     parser.add_argument('--batch_size',
                         dest='batch_size',
                         type=int,

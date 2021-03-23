@@ -59,12 +59,13 @@ def main():
     _ = evaluate(unet, test_dataloader, final_renders_path, args.device)
 
     print("generating video animation...")
-    video_animation_path = os.path.join(args.workdir, 'kabarov_sketch_animation.mp4')
-    ffmpeg_exit_code = generate_mp4(final_renders_path, video_animation_path, )
+    video_animation_path = os.path.join(args.workdir, 'kabarov_animation.mp4')
+    _ = generate_mp4(final_renders_path, video_animation_path, img_ext='png', frame_rate=15)
+
     print("all done.")
     print("network checkpoint: %s" % ckpt_path)
     print("generated renders: %s" % final_renders_path)
-    #print("generated animation video: %s" % )
+    print("generated animation video: %s" % video_animation_path)
 
     return
 
