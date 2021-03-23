@@ -43,3 +43,11 @@ def get_amass_cmu_sketch_data(workdir):
     sketches_dir = os.path.join(data_dir, 'sketches')
 
     return amass_cmu_renders_dir, sketches_dir
+
+def generate_mp4(image_dir, video_path, img_ext='png', frame_rate=15):
+
+    exit_code = os.system("ffmpeg -framerate %d -pattern_type glob "
+                          "-i \'%s/*.%s\' -vcodec h264 -an -b:v 10M -pix_fmt yuv420p -an \'%s\'" %
+                          (frame_rate, image_dir, img_ext, video_path))
+
+    return exit_code
