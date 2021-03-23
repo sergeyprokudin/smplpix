@@ -45,7 +45,8 @@ def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
 
 
 def evaluate(model, data_loader, res_dir, device,
-             vgg=None, report_loss=True, show_progress=True):
+             vgg=None, report_loss=True, show_progress=True,
+             save_input=True, save_target=True):
 
     model.eval()
 
@@ -70,7 +71,14 @@ def evaluate(model, data_loader, res_dir, device,
         losses.append(float(criterion_l1(vgg(ypred), vgg(ytrue))))
 
         for fid in range(0, len(img_names)):
-            save_image(ypred[fid].transpose(1, 2), os.path.join(res_dir, '%s' % img_names[fid]))
+            if save_input:
+                res_image = torch.cat([x[fid].transpose(1, 2), ypred[fid].transpose(1, 2)], dim=1)
+            else:
+                res_image = ypred[fid].transpose(1, 2)
+            if save_target:
+                res_image = torch.cat([res_image, ytrue[fid].transpose(1, 2)], dim=1)
+
+            save_image(res_image, os.path.join(res_dir, '%s' % img_names[fid]))
 
     avg_loss = np.mean(losses)
 

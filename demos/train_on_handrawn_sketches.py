@@ -63,7 +63,7 @@ def main():
                                   )
     test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size)
     final_renders_path = os.path.join(args.workdir, 'final_test_renders')
-    _ = evaluate(unet, test_dataloader, final_renders_path, args.device)
+    _ = evaluate(unet, test_dataloader, final_renders_path, args.device, save_target=False, save_input=True)
 
     print("generating video animation...")
     video_animation_path = os.path.join(args.workdir, 'kabarov_animation.mp4')
