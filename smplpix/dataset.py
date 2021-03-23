@@ -28,12 +28,11 @@ class SMPLPixDataset(Dataset):
             aug_scale_interval = [0.5, 1.5]
         if aug_angle_interval is None:
             aug_angle_interval = [-60, 60]
-        self.input_dir = input_dir
-        if self.output_dir is None:
-            self.output_dir = self.input_dir
-        else:
-            self.output_dir = output_dir
+        if output_dir is None:
+            output_dir = input_dir
 
+        self.input_dir = input_dir
+        self.output_dir = output_dir
         self.samples = sorted(os.listdir(self.output_dir))
         self.downsample_factor = downsample_factor
         self.perform_augmentation = perform_augmentation
