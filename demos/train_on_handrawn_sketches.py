@@ -22,25 +22,32 @@ from smplpix.training import train, evaluate
 def get_args():
 
     parser = argparse.ArgumentParser(description='Train SMPLpix rendering network on 20 hand-drawn sketches.')
-    parser.add_argument('workdir',
+    parser.add_argument('--workdir',
+                        dest='workdir',
                         help='workdir to save data, checkpoints, renders, etc.',
                         default=os.getcwd())
-    parser.add_argument('batch_size',
+    parser.add_argument('--batch_size',
+                        dest='batch_size',
                         help='batch size to use during training',
                         default=4)
-    parser.add_argument('device',
+    parser.add_argument('--device',
+                        dest='device',
                         help='GPU device to use during training',
                         default='cuda')
-    parser.add_argument('downsample_factor',
+    parser.add_argument('--downsample_factor',
+                        dest='downsample_factor',
                         help='image downsampling factor (for faster training)',
                         default=4)
-    parser.add_argument('n_epochs',
+    parser.add_argument('--n_epochs',
+                        dest='n_epochs',
                         help='number of epochs to train the network for',
                         default=500)
-    parser.add_argument('eval_every_nth_epoch',
+    parser.add_argument('--eval_every_nth_epoch',
+                        dest='eval_every_nth_epoch',
                         help='evaluate on validation data every nth epoch',
                         default=25)
-    parser.add_argument('sched_patience',
+    parser.add_argument('--sched_patience',
+                        dest='sched_patience',
                         help='amount of validation evaluations with no improvement after which LR will be reduced',
                         default=5)
     args = parser.parse_args()
