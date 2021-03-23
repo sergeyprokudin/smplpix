@@ -1,4 +1,4 @@
-# training and eval loop functions
+# training and evaluation loop functions
 
 import os
 import numpy as np
@@ -36,19 +36,21 @@ def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
 
         if epoch_id % eval_every_nth_epoch == 0:
             eval_dir = os.path.join(log_dir, 'val_preds_%04d' % epoch_id)
-            val_loss = evaluate(model, vgg, val_dataloader, eval_dir, device)
+            val_loss = evaluate(model, val_dataloader, eval_dir, device, vgg)
             sched.step(val_loss)
 
     return
 
 
-def evaluate(model, vgg, data_loader, res_dir, device):
+def evaluate(model, data_loader, res_dir, device, vgg=None):
 
     model.eval()
 
     if not os.path.exists(res_dir):
         os.makedirs(res_dir)
 
+    if vgg is None:
+        vgg = Vgg16().to(device)
     criterion_l1 = nn.L1Loss().to(device)
     losses = []
 
@@ -64,7 +66,7 @@ def evaluate(model, vgg, data_loader, res_dir, device):
 
     loss = np.mean(losses)
 
-    print("/nVGG loss: %f" % np.mean(losses))
-    print("results saved at %s" % res_dir)
+    print("\nVGG loss: %f" % np.mean(losses))
+    print("images saved at %s" % res_dir)
 
     return loss
