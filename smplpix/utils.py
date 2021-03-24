@@ -47,7 +47,7 @@ def get_amass_cmu_sketch_data(workdir):
 def generate_mp4(image_dir, video_path, img_ext='png', frame_rate=15):
 
     ffmpeg_cmd = "ffmpeg -framerate %d -pattern_type glob " \
-                "-i \'%s/*.%s\' -vcodec h264 -an -b:v 10M -pix_fmt yuv420p -an \'%s\'" % \
+                "-i \'%s/*.%s\' -vcodec h264 -an -b:v 1M -pix_fmt yuv420p -an \'%s\'" % \
                 (frame_rate, image_dir, img_ext, video_path)
 
     print("executing %s" % ffmpeg_cmd)

@@ -8,9 +8,6 @@
 #
 
 import os
-import argparse
-import torch
-import torch.nn as nn
 from torch.utils.data import DataLoader
 
 from smplpix.args import get_smplpix_arguments
@@ -28,7 +25,7 @@ def main():
 
     args = get_smplpix_arguments()
     log_dir = os.path.join(args.workdir, 'logs')
-    ckpt_path = os.path.join(args.workdir, 'kabarov_net.h5')
+    ckpt_path = os.path.join(args.workdir, 'network.h5')
 
     print("downloading the data...")
     renders_dir, sketch_dir = get_amass_cmu_sketch_data(args.workdir)
@@ -59,14 +56,13 @@ def main():
                                   downsample_factor=args.downsample_factor,
                                   perform_augmentation=False,
                                   n_input_channels=args.n_input_channels,
-                                  n_output_channels=args.n_output_channels
-                                  )
+                                  n_output_channels=args.n_output_channels)
     test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size)
     final_renders_path = os.path.join(args.workdir, 'final_test_renders')
     _ = evaluate(unet, test_dataloader, final_renders_path, args.device, save_target=False, save_input=True)
 
     print("generating video animation...")
-    video_animation_path = os.path.join(args.workdir, 'kabarov_animation.mp4')
+    video_animation_path = os.path.join(args.workdir, 'animation.mp4')
     _ = generate_mp4(final_renders_path, video_animation_path, img_ext='png', frame_rate=15)
 
     print("all done.")

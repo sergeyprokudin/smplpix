@@ -96,7 +96,7 @@ class UpConv(nn.Module):
         self.conv = DoubleConv(in_ch, out_ch)
 
     def forward(self, x1, x2):
-        x_ini = x1
+
         x1 = self.up(x1)
 
         # input is CHW
