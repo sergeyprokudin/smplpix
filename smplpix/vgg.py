@@ -7,12 +7,12 @@
 import torch
 from torchvision import models
 
-class Vgg16(torch.nn.Module):
+class Vgg16Features(torch.nn.Module):
 
     def __init__(self,
                  requires_grad=False,
                  layers_weights=None):
-        super(Vgg16, self).__init__()
+        super(Vgg16Features, self).__init__()
         if layers_weights is None:
             self.layers_weights = [1 / 32, 1 / 16, 1 / 8, 1 / 4, 1]
         else:

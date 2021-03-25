@@ -9,13 +9,13 @@ from tqdm import tqdm
 import torch
 import torch.nn as nn
 from torchvision.utils import save_image
-from .vgg import Vgg16
+from .vgg import Vgg16Features
 
 
 def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
           n_epochs=1000, eval_every_nth_epoch=50, sched_patience=5, init_lr=1.0e-4):
 
-    vgg = Vgg16().to(device)
+    vgg = Vgg16Features().to(device)
     criterion_l1 = nn.L1Loss().to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=init_lr)
     sched = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer,
@@ -54,7 +54,7 @@ def evaluate(model, data_loader, res_dir, device,
         os.makedirs(res_dir)
 
     if vgg is None:
-        vgg = Vgg16().to(device)
+        vgg = Vgg16Features().to(device)
     criterion_l1 = nn.L1Loss().to(device)
     losses = []
 
