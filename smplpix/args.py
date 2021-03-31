@@ -49,7 +49,7 @@ def get_smplpix_arguments():
                         default=500)
     parser.add_argument('--learning_rate',
                         dest='learning_rate',
-                        type=int,
+                        type=float,
                         help='initial learning rate',
                         default=1.0e-4)
     parser.add_argument('--eval_every_nth_epoch',
