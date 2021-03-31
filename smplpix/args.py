@@ -62,6 +62,12 @@ def get_smplpix_arguments():
                         type=int,
                         help='amount of validation set evaluations with no improvement after which LR will be reduced',
                         default=5)
+    parser.add_argument('--aug_prob',
+                        dest='augmentation_probability',
+                        type=float,
+                        help='amount of validation set evaluations with no improvement after which LR will be reduced',
+                        default=0.75)
+
     args = parser.parse_args()
 
     return args
