@@ -22,13 +22,12 @@ def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
                                                        patience=sched_patience,
                                                        verbose=True)
 
-    for epoch_id in range(0, n_epochs):
+    for epoch_id in tqdm(range(0, n_epochs)):
 
-        print("epoch id %d" % epoch_id)
         model.train()
         torch.save(model.state_dict(), ckpt_path)
 
-        for batch_idx, (x, ytrue, img_names) in tqdm(enumerate(train_dataloader)):
+        for batch_idx, (x, ytrue, img_names) in enumerate(train_dataloader):
             x, ytrue = x.to(device), ytrue.to(device)
             ypred = model(x)
             vgg_loss = criterion_l1(vgg(ypred), vgg(ytrue))
