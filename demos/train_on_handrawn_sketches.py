@@ -34,7 +34,7 @@ def main():
 
     dataset = SMPLPixDataset(input_dir=args.input_dir,
                              output_dir=args.output_dir,
-                             perform_augmentation=False,
+                             perform_augmentation=True,
                              augmentation_probability=args.augmentation_probability,
                              downsample_factor=args.downsample_factor,
                              n_input_channels=args.n_input_channels,
