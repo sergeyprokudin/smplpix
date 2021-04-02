@@ -25,7 +25,8 @@ def generate_eval_video(args, unet, ckpt_path):
                                   downsample_factor=args.downsample_factor,
                                   perform_augmentation=False,
                                   n_input_channels=args.n_input_channels,
-                                  n_output_channels=args.n_output_channels)
+                                  n_output_channels=args.n_output_channels,
+                                  augmentation_probability=args.augmentation_probability)
     test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size)
     final_renders_path = os.path.join(args.workdir, 'final_test_renders')
     _ = evaluate(unet, test_dataloader, final_renders_path, args.device, save_target=False, save_input=True)
