@@ -15,7 +15,7 @@ from .vgg import Vgg16Features
 def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
           n_epochs=1000, eval_every_nth_epoch=50, sched_patience=5, init_lr=1.0e-4):
 
-    vgg = Vgg16Features(layers_weights = [1/32, 1 / 16, 1 / 8, 1 / 4, 1]).to(device)
+    vgg = Vgg16Features(layers_weights = [1/32, 1/16, 1/8, 1/4, 1]).to(device)
     criterion_l1 = nn.L1Loss().to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=init_lr)
     sched = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer,
