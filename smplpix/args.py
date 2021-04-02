@@ -18,6 +18,10 @@ def get_smplpix_arguments():
                         help='directory with corresponding target images to the network (e.g. real photos'
                              'with the same camera parameters)',
                         default=None)
+    parser.add_argument('--input_novel',
+                        dest='input_novel',
+                        help='directory with novel input to evaluate model (e.g., novel views unseen during training)',
+                        default=None)
     parser.add_argument('--n_input_channels',
                         dest='n_input_channels',
                         type=int,

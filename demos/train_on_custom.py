@@ -11,7 +11,7 @@ import os
 from torch.utils.data import DataLoader
 
 from smplpix.args import get_smplpix_arguments
-from smplpix.utils import get_amass_cmu_sketch_data, generate_mp4
+from smplpix.utils import generate_mp4
 from smplpix.dataset import SMPLPixDataset
 from smplpix.unet import UNet
 from smplpix.training import train, evaluate
@@ -47,7 +47,7 @@ def main():
 
     # we will now use the network trained on 20 sketches to convert the rest of AMASS renders
     print("processing test AMASS renders...")
-    test_dataset = SMPLPixDataset(input_dir=args.input_dir,
+    test_dataset = SMPLPixDataset(input_dir=args.input_novel,
                                   downsample_factor=args.downsample_factor,
                                   perform_augmentation=False,
                                   n_input_channels=args.n_input_channels,
