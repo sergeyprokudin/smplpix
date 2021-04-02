@@ -64,6 +64,7 @@ def main():
     unet = UNet(n_channels=args.n_input_channels, n_classes=args.n_output_channels).to(args.device)
 
     print("starting training...")
+    finished = False
     try:
 
         train(model=unet, train_dataloader=dataloader, val_dataloader=dataloader,
