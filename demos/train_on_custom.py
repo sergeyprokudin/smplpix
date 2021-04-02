@@ -70,11 +70,13 @@ def main():
               log_dir=log_dir, ckpt_path=ckpt_path, device=args.device, n_epochs=args.n_epochs,
               eval_every_nth_epoch=args.eval_every_nth_epoch, sched_patience=args.sched_patience,
               init_lr=args.learning_rate)
+        finished = True
     except KeyboardInterrupt:
         print("training interrupted...")
         generate_eval_video(args, unet, ckpt_path)
 
-    generate_eval_video(args, unet, ckpt_path)
+    if finished:
+        generate_eval_video(args, unet, ckpt_path)
 
     return
 
