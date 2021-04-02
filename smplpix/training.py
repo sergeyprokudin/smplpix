@@ -22,8 +22,9 @@ def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
                                                        patience=sched_patience,
                                                        verbose=True)
 
-    for epoch_id in tqdm(range(0, n_epochs)):
+    for epoch_id in range(0, n_epochs):
 
+        print("epoch id %d" % epoch_id)
         model.train()
         torch.save(model.state_dict(), ckpt_path)
 
