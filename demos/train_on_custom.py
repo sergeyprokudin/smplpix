@@ -26,7 +26,7 @@ def generate_eval_video(args, unet, ckpt_path):
                                   perform_augmentation=False,
                                   n_input_channels=args.n_input_channels,
                                   n_output_channels=args.n_output_channels,
-                                  augmentation_probability=args.augmentation_probability)
+                                  augmentation_probability=args.aug_prob)
     test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size)
     final_renders_path = os.path.join(args.workdir, 'final_test_renders')
     _ = evaluate(unet, test_dataloader, final_renders_path, args.device, save_target=False, save_input=True)
@@ -64,6 +64,8 @@ def main():
 
     print("defining the neural renderer model (U-Net)...")
     unet = UNet(n_channels=args.n_input_channels, n_classes=args.n_output_channels).to(args.device)
+    import torch
+    unet.load_state_dict(torch.load(ckpt_path, map_location='cuda'))
 
     print("starting training...")
     finished = False
