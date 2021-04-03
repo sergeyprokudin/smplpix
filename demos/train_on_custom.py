@@ -66,6 +66,7 @@ def main():
     unet = UNet(n_channels=args.n_input_channels, n_classes=args.n_output_channels).to(args.device)
     import torch
     unet.load_state_dict(torch.load(ckpt_path, map_location='cuda'))
+    generate_eval_video(args, unet, ckpt_path)
 
     print("starting training...")
     finished = False
