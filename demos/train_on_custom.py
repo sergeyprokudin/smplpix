@@ -33,7 +33,7 @@ def generate_eval_video(args, unet, ckpt_path):
 
     print("generating video animation...")
     video_animation_path = os.path.join(args.workdir, 'animation.mp4')
-    _ = generate_mp4(final_renders_path, video_animation_path, img_ext='jpeg', frame_rate=15)
+    _ = generate_mp4(final_renders_path, video_animation_path, img_ext='jpg', frame_rate=15)
 
     print("all done.")
     print("network checkpoint: %s" % ckpt_path)
