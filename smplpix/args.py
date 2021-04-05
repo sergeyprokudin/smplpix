@@ -70,7 +70,7 @@ def get_smplpix_arguments():
                         dest='aug_prob',
                         type=float,
                         help='amount of validation set evaluations with no improvement after which LR will be reduced',
-                        default=0.0)
+                        default=0.25)
 
     args = parser.parse_args()
 

@@ -33,7 +33,7 @@ def generate_eval_video(args, unet, ckpt_path):
 
     print("generating video animation...")
     video_animation_path = os.path.join(args.workdir, 'animation.mp4')
-    _ = generate_mp4(final_renders_path, video_animation_path, img_ext='jpg', frame_rate=25)
+    _ = generate_mp4(final_renders_path, video_animation_path, img_ext='jpeg', frame_rate=25)
 
     print("all done.")
     print("network checkpoint: %s" % ckpt_path)
@@ -45,7 +45,7 @@ def generate_eval_video(args, unet, ckpt_path):
 def main():
 
     print("******************************************************************************************\n"+
-          "********* Training SMPLpix on hand-drawn sketches created on top of mesh renders *********\n"+
+          "****************** Training SMPLpix on monocular video capture  **************************\n"+
           "******************************************************************************************\n")
 
     args = get_smplpix_arguments()
@@ -54,7 +54,7 @@ def main():
 
     dataset = SMPLPixDataset(input_dir=args.input_dir,
                              output_dir=args.output_dir,
-                             perform_augmentation=False,
+                             perform_augmentation=True,
                              augmentation_probability=args.aug_prob,
                              downsample_factor=args.downsample_factor,
                              n_input_channels=args.n_input_channels,
@@ -64,9 +64,6 @@ def main():
 
     print("defining the neural renderer model (U-Net)...")
     unet = UNet(n_channels=args.n_input_channels, n_classes=args.n_output_channels).to(args.device)
-    # import torch
-    # unet.load_state_dict(torch.load(ckpt_path, map_location='cuda'))
-    # generate_eval_video(args, unet, ckpt_path)
 
     print("starting training...")
     finished = False
