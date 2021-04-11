@@ -13,7 +13,7 @@ from torch.utils.data import DataLoader
 from smplpix.args import get_smplpix_arguments
 from smplpix.utils import generate_mp4
 from smplpix.dataset import SMPLPixDataset
-from smplpix.unet_old import UNet
+from smplpix.unet import UNet
 from smplpix.training import train, evaluate
 
 
@@ -63,7 +63,8 @@ def main():
     dataloader = DataLoader(dataset, batch_size=args.batch_size)
 
     print("defining the neural renderer model (U-Net)...")
-    unet = UNet(n_channels=args.n_input_channels, n_classes=args.n_output_channels).to(args.device)
+    unet = UNet(in_channels=args.n_input_channels, out_channels=args.n_output_channels,
+                n_blocks=5, dim=2).to(args.device)
 
     print("starting training...")
     finished = False
