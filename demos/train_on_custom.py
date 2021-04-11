@@ -13,7 +13,7 @@ from torch.utils.data import DataLoader
 from smplpix.args import get_smplpix_arguments
 from smplpix.utils import generate_mp4
 from smplpix.dataset import SMPLPixDataset
-from smplpix.unet import UNet
+from smplpix.unet_old import UNet
 from smplpix.training import train, evaluate
 
 
