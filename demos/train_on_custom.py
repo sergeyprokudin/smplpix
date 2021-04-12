@@ -64,7 +64,7 @@ def main():
 
     print("defining the neural renderer model (U-Net)...")
     unet = UNet(in_channels=args.n_input_channels, out_channels=args.n_output_channels,
-                n_blocks=5, dim=2).to(args.device)
+                n_blocks=5, dim=2, up_mode='resizeconv_linear').to(args.device)
 
     print("starting training...")
     finished = False
