@@ -760,7 +760,7 @@ class UNet(nn.Module):
             out_channels: int = 2,
             n_blocks: int = 3,
             start_filts: int = 32,
-            up_mode: str = 'transpose',
+            up_mode: str = 'resizeconv_linear',
             merge_mode: str = 'concat',
             planar_blocks: Sequence = (),
             batch_norm: str = 'unset',
