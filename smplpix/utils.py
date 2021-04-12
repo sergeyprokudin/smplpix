@@ -1,7 +1,8 @@
 # helper functions for downloading and preprocessing SMPLpix training data
 #
-# (c) Sergey Prokudin (sergey.prokudin@gmail.com), 2021
-#
+# Copyright (c) 2021 - now
+# Computer Vision and Learning Group, ETH Zurich, Switzerland
+# Author: Sergey Prokudin
 
 import os
 

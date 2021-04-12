@@ -1,3 +1,8 @@
+# pytorch U-Net model (https://arxiv.org/abs/1505.04597)
+# original repository:
+# https://github.com/ELEKTRONN
+# (https://github.com/ELEKTRONN/elektronn3/blob/master/elektronn3/models/unet.py)
+
 # ELEKTRONN3 - Neural Network Toolkit
 #
 # Copyright (c) 2017 - now
