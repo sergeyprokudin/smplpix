@@ -64,10 +64,10 @@ def generate_mp4(image_dir, video_path, frame_rate=15, img_ext=None):
 
     if img_ext is None:
         test_img = os.listdir(image_dir)[0]
-        img_ext = os.path.splitext(test_img)[1:]
+        img_ext = os.path.splitext(test_img)
 
     ffmpeg_cmd = "ffmpeg -framerate %d -pattern_type glob " \
-                "-i \'%s/*.%s\' -vcodec h264 -an -b:v 1M -pix_fmt yuv420p -an \'%s\'" % \
+                "-i \'%s/*%s\' -vcodec h264 -an -b:v 1M -pix_fmt yuv420p -an \'%s\'" % \
                 (frame_rate, image_dir, img_ext, video_path)
 
     print("executing %s" % ffmpeg_cmd)
