@@ -7,11 +7,11 @@ import os
 import pprint
 from torch.utils.data import DataLoader
 
-from .args import get_smplpix_arguments
-from .utils import generate_mp4
-from .dataset import SMPLPixDataset
-from .unet import UNet
-from .training import train, evaluate
+from smplpix.args import get_smplpix_arguments
+from smplpix.utils import generate_mp4
+from smplpix.dataset import SMPLPixDataset
+from smplpix.unet import UNet
+from smplpix.training import train, evaluate
 
 
 def generate_eval_video(args, data_dir, unet, frame_rate=25):
