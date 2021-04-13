@@ -18,6 +18,8 @@ def generate_eval_video(args, data_dir, unet, frame_rate=25, save_target=False, 
 
     # we will now use the network trained on 20 sketches to convert the rest of AMASS renders
     print("rendering SMPLpix predictions for %s..." % data_dir)
+    data_part_name = os.path.split(data_dir)[-1]
+
     test_dataset = SMPLPixDataset(data_dir=data_dir,
                                   downsample_factor=args.downsample_factor,
                                   perform_augmentation=False,
@@ -25,13 +27,13 @@ def generate_eval_video(args, data_dir, unet, frame_rate=25, save_target=False, 
                                   n_output_channels=args.n_output_channels,
                                   augmentation_probability=args.aug_prob)
     test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size)
-    final_renders_path = os.path.join(args.workdir, 'final_test_renders')
+    final_renders_path = os.path.join(args.workdir, 'renders_%s' % data_part_name)
     _ = evaluate(unet, test_dataloader, final_renders_path, args.device, save_target=save_target, save_input=save_input)
 
     print("generating video animation for data %s..." % data_dir)
-    data_dir_last = os.path.split(data_dir)[-1]
 
-    video_animation_path = os.path.join(args.workdir, '%s_animation.mp4' % data_dir_last)
+
+    video_animation_path = os.path.join(args.workdir, '%s_animation.mp4' % data_part_name)
     _ = generate_mp4(final_renders_path, video_animation_path, frame_rate=frame_rate)
 
     return
