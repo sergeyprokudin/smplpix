@@ -12,8 +12,7 @@ from torchvision.transforms import functional as tvf
 
 class SMPLPixDataset(Dataset):
 
-    def __init__(self, input_dir,
-                 output_dir=None,
+    def __init__(self, data_dir,
                  n_input_channels=3,
                  n_output_channels=3,
                  downsample_factor=1,
@@ -31,11 +30,12 @@ class SMPLPixDataset(Dataset):
             aug_scale_interval = [0.5, 1.5]
         if aug_angle_interval is None:
             aug_angle_interval = [-60, 60]
-        if output_dir is None:
-            output_dir = input_dir
 
-        self.input_dir = input_dir
-        self.output_dir = output_dir
+        self.input_dir = os.path.join(data_dir, 'input')
+        self.output_dir = os.path.join(data_dir, 'output')
+        if not os.path.exists(self.output_dir):
+            self.output_dir = self.input_dir
+
         self.n_input_channels = n_input_channels
         self.n_output_channels = n_output_channels
         self.samples = sorted(os.listdir(self.output_dir))

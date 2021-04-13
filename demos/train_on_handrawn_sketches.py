@@ -32,7 +32,7 @@ def main():
     args.input_dir = renders_dir
     args.output_dir = sketch_dir
 
-    dataset = SMPLPixDataset(input_dir=args.input_dir,
+    dataset = SMPLPixDataset(data_dir=args.input_dir,
                              output_dir=args.output_dir,
                              perform_augmentation=True,
                              augmentation_probability=args.augmentation_probability,
@@ -54,7 +54,7 @@ def main():
 
     # we will now use the network trained on 20 sketches to convert the rest of AMASS renders
     print("processing test AMASS renders...")
-    test_dataset = SMPLPixDataset(input_dir=args.input_dir,
+    test_dataset = SMPLPixDataset(data_dir=args.input_dir,
                                   downsample_factor=args.downsample_factor,
                                   perform_augmentation=False,
                                   n_input_channels=args.n_input_channels,

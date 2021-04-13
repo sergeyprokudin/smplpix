@@ -8,19 +8,18 @@ def get_smplpix_arguments():
                         dest='workdir',
                         help='workdir to save data, checkpoints, renders, etc.',
                         default=os.getcwd())
-    parser.add_argument('--input_dir',
-                        dest='input_dir',
-                        help='directory with input images to the network (e.g. point cloud projections, '
-                             'coarse mesh renders, etc.)',
+    parser.add_argument('--train_dir',
+                        dest='train_dir',
+                        help='directory with training input and target images to the network, should contain'
+                             'input and output subfolders',
                         default=None)
-    parser.add_argument('--output_dir',
-                        dest='output_dir',
-                        help='directory with corresponding target images to the network (e.g. real photos'
-                             'with the same camera parameters)',
+    parser.add_argument('--val_dir',
+                        dest='val_dir',
+                        help='directory with validation set',
                         default=None)
-    parser.add_argument('--input_novel',
-                        dest='input_novel',
-                        help='directory with novel input to evaluate model (e.g., novel views unseen during training)',
+    parser.add_argument('--test_dir',
+                        dest='test_dir',
+                        help='directory with test set (might only include input folder)',
                         default=None)
     parser.add_argument('--n_input_channels',
                         dest='n_input_channels',
@@ -32,6 +31,11 @@ def get_smplpix_arguments():
                         type=int,
                         help='number of channels in the input images',
                         default=3)
+    parser.add_argument('--n_unet_blocks',
+                        dest='n_unet_blocks',
+                        type=int,
+                        help='number of blocks in UNet rendering module',
+                        default=5)
     parser.add_argument('--batch_size',
                         dest='batch_size',
                         type=int,

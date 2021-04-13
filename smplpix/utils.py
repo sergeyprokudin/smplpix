@@ -1,8 +1,7 @@
 # helper functions for downloading and preprocessing SMPLpix training data
 #
-# Copyright (c) 2021 - now
-# Computer Vision and Learning Group, ETH Zurich, Switzerland
-# Author: Sergey Prokudin
+# (c) Sergey Prokudin (sergey.prokudin@gmail.com), 2021
+#
 
 import os
 
@@ -26,6 +25,22 @@ def unzip(zip_path, target_dir, remove_zip=True):
     return
 
 
+def download_and_unzip(dropbox_url, workdir):
+
+    if not os.path.exists(workdir):
+        print("creating workdir %s" % workdir)
+        os.makedirs(workdir)
+
+    data_zip_path = os.path.join(workdir, 'data.zip')
+    print("downloading zip from dropbox link: %s" % dropbox_url)
+    download_dropbox_url(dropbox_url, data_zip_path)
+    print("unzipping %s" % data_zip_path)
+    unzip(data_zip_path, workdir)
+    data_dir = os.path.join(workdir, 'dropbox_data')
+    print("data loaded and stored at %s" % data_dir)
+
+    return data_dir
+
 def get_amass_cmu_sketch_data(workdir):
 
     if not os.path.exists(workdir):
@@ -45,7 +60,11 @@ def get_amass_cmu_sketch_data(workdir):
 
     return amass_cmu_renders_dir, sketches_dir
 
-def generate_mp4(image_dir, video_path, img_ext='png', frame_rate=15):
+def generate_mp4(image_dir, video_path, frame_rate=15, img_ext=None):
+
+    if img_ext is None:
+        test_img = os.listdir(image_dir)[0]
+        img_ext = os.path.splitext(test_img)[1:]
 
     ffmpeg_cmd = "ffmpeg -framerate %d -pattern_type glob " \
                 "-i \'%s/*.%s\' -vcodec h264 -an -b:v 1M -pix_fmt yuv420p -an \'%s\'" % \
