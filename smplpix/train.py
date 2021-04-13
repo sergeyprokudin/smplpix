@@ -63,7 +63,7 @@ def main():
                              n_output_channels=args.n_output_channels)
     train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size)
 
-    if args.val_dir is not None:
+    if os.path.exists(val_dir):
         val_dataset = SMPLPixDataset(data_dir=val_dir,
                                        perform_augmentation=True,
                                        augmentation_probability=args.aug_prob,
