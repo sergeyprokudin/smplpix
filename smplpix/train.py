@@ -14,7 +14,7 @@ from smplpix.unet import UNet
 from smplpix.training import train, evaluate
 
 
-def generate_eval_video(args, data_dir, unet, frame_rate=25):
+def generate_eval_video(args, data_dir, unet, frame_rate=25, save_target=False, save_input=True):
 
     # we will now use the network trained on 20 sketches to convert the rest of AMASS renders
     print("rendering SMPLpix predictions for %s..." % data_dir)
@@ -26,7 +26,7 @@ def generate_eval_video(args, data_dir, unet, frame_rate=25):
                                   augmentation_probability=args.aug_prob)
     test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size)
     final_renders_path = os.path.join(args.workdir, 'final_test_renders')
-    _ = evaluate(unet, test_dataloader, final_renders_path, args.device, save_target=False, save_input=True)
+    _ = evaluate(unet, test_dataloader, final_renders_path, args.device, save_target=save_target, save_input=save_input)
 
     print("generating video animation for data %s..." % data_dir)
     data_dir_last = os.path.split(data_dir)[-1]
@@ -49,7 +49,11 @@ def main():
     log_dir = os.path.join(args.workdir, 'logs')
     ckpt_path = os.path.join(args.workdir, 'network.h5')
 
-    train_dataset = SMPLPixDataset(data_dir=args.train_dir,
+    train_dir = os.path.join(args.data_dir, 'train')
+    val_dir = os.path.join(args.data_dir, 'validation')
+    test_dir = os.path.join(args.data_dir, 'test')
+
+    train_dataset = SMPLPixDataset(data_dir=train_dir,
                              perform_augmentation=True,
                              augmentation_probability=args.aug_prob,
                              downsample_factor=args.downsample_factor,
@@ -58,7 +62,7 @@ def main():
     train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size)
 
     if args.val_dir is not None:
-        val_dataset = SMPLPixDataset(data_dir=args.val_dir,
+        val_dataset = SMPLPixDataset(data_dir=val_dir,
                                        perform_augmentation=True,
                                        augmentation_probability=args.aug_prob,
                                        downsample_factor=args.downsample_factor,
@@ -84,14 +88,14 @@ def main():
 
     except KeyboardInterrupt:
         print("training interrupted, generating final animations...")
-        generate_eval_video(args, args.train_dir, unet)
-        generate_eval_video(args, args.val_dir, unet)
-        generate_eval_video(args, args.test_dir, unet)
+        generate_eval_video(args, train_dir, unet, save_target=True)
+        generate_eval_video(args, val_dir, unet, save_target=True)
+        generate_eval_video(args, test_dir, unet, save_target=False)
 
     if finished:
-        generate_eval_video(args, args.train_dir, unet)
-        generate_eval_video(args, args.val_dir, unet)
-        generate_eval_video(args, args.test_dir, unet)
+        generate_eval_video(args, train_dir, unet, save_target=True)
+        generate_eval_video(args, val_dir, unet, save_target=True)
+        generate_eval_video(args, test_dir, unet, save_target=False)
 
     return
 

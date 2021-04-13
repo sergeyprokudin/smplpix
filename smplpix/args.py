@@ -8,18 +8,10 @@ def get_smplpix_arguments():
                         dest='workdir',
                         help='workdir to save data, checkpoints, renders, etc.',
                         default=os.getcwd())
-    parser.add_argument('--train_dir',
-                        dest='train_dir',
+    parser.add_argument('--data_dir',
+                        dest='data_dir',
                         help='directory with training input and target images to the network, should contain'
                              'input and output subfolders',
-                        default=None)
-    parser.add_argument('--val_dir',
-                        dest='val_dir',
-                        help='directory with validation set',
-                        default=None)
-    parser.add_argument('--test_dir',
-                        dest='test_dir',
-                        help='directory with test set (might only include input folder)',
                         default=None)
     parser.add_argument('--n_input_channels',
                         dest='n_input_channels',
