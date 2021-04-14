@@ -18,13 +18,22 @@ pip3 install git+https://github.com/sergeyprokudin/smplpix
 
 ### Prepare the data
 
-We will provide the script for generating SMPLpix training data from the mp4 video. _Coming soon_.
-
-This uses [SMPLify-X framework](https://smpl-x.is.tue.mpg.de/) for estimating SMPL-X meshes from RGB images.
+_Coming soon_: we will provide the script for generating SMPLpix training data from the mp4 video. This will allow you 
+to create your own neural avatar given monocular video.
 
 ### Run training
 
-Below is the script
+We provide some preprocessed data which allows you to run and test the training pipeline right away:
+
+```
+python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/smplpix_subject0_v2.zip?dl=0' --workdir='/home/sprokudin/smplpix_logs' --n_epochs=500 --eval_every_nth_epoch=25  --aug_prob=0.5 --downsample_factor=4  --sched_patience=1
+```
+
+Below is also a command the model to create an artistic avatar from 20 hand-drawn sketches (created by [Alexander Kabarov](blackocher@gmail.com)):
+
+```
+python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/smplpix_subject0_v2.zip?dl=0' --workdir='/home/sprokudin/smplpix_logs' --n_epochs=500 --eval_every_nth_epoch=25  --aug_prob=0.5 --downsample_factor=4  --sched_patience=1
+```
 
 ### Render avatar in novel poses and expressions
 
