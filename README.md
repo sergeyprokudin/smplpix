@@ -18,8 +18,8 @@ pip3 install git+https://github.com/sergeyprokudin/smplpix
 
 ### Prepare the data
 
-_Coming soon_: we will provide the script for generating SMPLpix training data from the mp4 video. This will allow you 
-to create your own neural avatar given monocular video.
+_Coming soon_: we will provide the Colab notebook for preparing SMPLpix training dataset. This will allow you 
+to create your own neural avatar given monocular video of a human moving in front of the camera.
 
 ### Run training
 
