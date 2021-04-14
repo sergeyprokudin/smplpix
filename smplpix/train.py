@@ -4,7 +4,7 @@
 #
 
 import os
-import json
+import pprint
 from torch.utils.data import DataLoader
 
 from smplpix.args import get_smplpix_arguments
@@ -45,7 +45,7 @@ def main():
 
     args = get_smplpix_arguments()
     print("ARGS:")
-    print(json.dumps(args))
+    pprint.pprint(args)
 
     log_dir = os.path.join(args.workdir, 'logs')
     ckpt_path = os.path.join(args.workdir, 'network.h5')
