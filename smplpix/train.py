@@ -69,7 +69,7 @@ def main():
 
     if os.path.exists(val_dir):
         val_dataset = SMPLPixDataset(data_dir=val_dir,
-                                       perform_augmentation=True,
+                                       perform_augmentation=False,
                                        augmentation_probability=args.aug_prob,
                                        downsample_factor=args.downsample_factor,
                                        n_input_channels=args.n_input_channels,
