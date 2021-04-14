@@ -34,6 +34,7 @@ def generate_eval_video(args, data_dir, unet, frame_rate=25, save_target=False, 
 
     video_animation_path = os.path.join(args.workdir, '%s_animation.mp4' % data_part_name)
     _ = generate_mp4(final_renders_path, video_animation_path, frame_rate=frame_rate)
+    print("saved animation video to %s" % video_animation_path)
 
     return
 
@@ -57,7 +58,6 @@ def main():
     train_dir = os.path.join(args.data_dir, 'train')
     val_dir = os.path.join(args.data_dir, 'validation')
     test_dir = os.path.join(args.data_dir, 'test')
-
 
     train_dataset = SMPLPixDataset(data_dir=train_dir,
                              perform_augmentation=True,

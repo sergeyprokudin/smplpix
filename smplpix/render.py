@@ -1,3 +1,8 @@
+# Rendering posed SMPL meshes with pyrender
+#
+# The scrtipt is heavily based on the SMPLify-x visualisation pipeline:
+# https://github.com/vchoutas/smplify-x/blob/master/smplifyx/fit_single_frame.py
+
 import os
 import numpy as np
 import pyrender
@@ -7,7 +12,6 @@ os.environ['PYOPENGL_PLATFORM'] = 'egl'
 
 def render_mesh(mesh_trimesh, camera_center, camera_transl, focal_length, img_width, img_height):
 
-    mesh_trimesh = trimesh.load()
     script_dir = os.path.dirname(os.path.realpath(__file__))
     vertex_colors = np.loadtxt(os.path.join(script_dir, 'smplx_verts_colors.txt'))
     mesh_new = trimesh.Trimesh(vertices=mesh_trimesh.vertices, faces=mesh_trimesh.faces, vertex_colors=vertex_colors)

@@ -7,7 +7,7 @@ setup(
     description="SMPLpix: Neural Avatars from Deformable 3D models",
     install_requires=["torch", "torchvision"],
     author="Sergey Prokudin",
-    license="GNU",
+    license="MIT",
     author_email="sergey.prokudin@gmail.com",
     packages=["smplpix"]
 )
