@@ -1,6 +1,6 @@
 # SMPLpix: Neural Avatars from Deformable 3D Models
 
-*SMPLpix** neural rendering framework combines two major components: deformable 3D models such as [SMPL-x](https://smpl-x.is.tue.mpg.de/)
+*SMPLpix* neural rendering framework combines two major components: deformable 3D models such as [SMPL-X](https://smpl-x.is.tue.mpg.de/)
 with the power of image-to-image translation frameworks (aka [pix2pix](https://phillipi.github.io/pix2pix/) models).
 
 Please check our [WACV 2021 paper](https://arxiv.org/abs/2008.06872) or a [5-minute explanatory video](https://www.youtube.com/watch?v=JY9t4xUAouk) for more details on the framework. 
@@ -8,6 +8,13 @@ Please check our [WACV 2021 paper](https://arxiv.org/abs/2008.06872) or a [5-min
 _**Note**_: this repository is a re-implementation of the original framework using public components made by the same author after the end of internship.
 It **does not contain** the original multi-subject proprietary training data and code, and uses full mesh rasterizations as inputs rather than point projections.
 
+## Installation
+
+```
+pip3 install git+https://github.com/sergeyprokudin/smplpix
+```
+
+## Demos
 
 ## Citation
 
@@ -21,16 +28,6 @@ If you find our work useful in your research, please consider citing:
   year={2021}
 }
 ```
-
-
-## Installation
-
-```
-pip3 install git+https://github.com/sergeyprokudin/smplpix
-```
-
-## Demos
-
 
 ## License
 
