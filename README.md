@@ -14,7 +14,19 @@ It **does not contain** the original multi-subject proprietary training data and
 pip3 install git+https://github.com/sergeyprokudin/smplpix
 ```
 
-## Demos
+## Demo
+
+### Create training data for your own neural avatar
+
+We will provide the script for generating SMPLpix training data from the mp4 video. _Coming soon_.
+
+This uses (SMPLify-X framework)[https://smpl-x.is.tue.mpg.de/] for estimating SMPL-X meshes from RGB images.
+
+### Run training
+
+
+
+### Generate novel poses
 
 ## Citation
 
