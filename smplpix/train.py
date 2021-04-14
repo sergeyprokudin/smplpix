@@ -4,7 +4,7 @@
 #
 
 import os
-import pprint
+import json
 from torch.utils.data import DataLoader
 
 from smplpix.args import get_smplpix_arguments
@@ -12,7 +12,7 @@ from smplpix.utils import generate_mp4
 from smplpix.dataset import SMPLPixDataset
 from smplpix.unet import UNet
 from smplpix.training import train, evaluate
-
+from smplpix.utils import download_and_unzip
 
 def generate_eval_video(args, data_dir, unet, frame_rate=25, save_target=False, save_input=True):
 
@@ -32,7 +32,6 @@ def generate_eval_video(args, data_dir, unet, frame_rate=25, save_target=False, 
 
     print("generating video animation for data %s..." % data_dir)
 
-
     video_animation_path = os.path.join(args.workdir, '%s_animation.mp4' % data_part_name)
     _ = generate_mp4(final_renders_path, video_animation_path, frame_rate=frame_rate)
 
@@ -46,14 +45,19 @@ def main():
 
     args = get_smplpix_arguments()
     print("ARGS:")
-    pprint.pprint(args)
+    print(json.dumps(args))
 
     log_dir = os.path.join(args.workdir, 'logs')
     ckpt_path = os.path.join(args.workdir, 'network.h5')
 
+    if args.data_url is not None:
+        download_and_unzip(args.data_url, args.workdir)
+        args.data_dir = os.path.join(args.workdir, 'data')
+
     train_dir = os.path.join(args.data_dir, 'train')
     val_dir = os.path.join(args.data_dir, 'validation')
     test_dir = os.path.join(args.data_dir, 'test')
+
 
     train_dataset = SMPLPixDataset(data_dir=train_dir,
                              perform_augmentation=True,

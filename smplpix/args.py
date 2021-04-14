@@ -13,6 +13,10 @@ def get_smplpix_arguments():
                         help='directory with training input and target images to the network, should contain'
                              'input and output subfolders',
                         default=None)
+    parser.add_argument('--data_url',
+                        dest='data_url',
+                        help='Dropbox URL containing zipped dataset',
+                        default=None)
     parser.add_argument('--n_input_channels',
                         dest='n_input_channels',
                         type=int,

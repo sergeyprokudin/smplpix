@@ -36,10 +36,8 @@ def download_and_unzip(dropbox_url, workdir):
     download_dropbox_url(dropbox_url, data_zip_path)
     print("unzipping %s" % data_zip_path)
     unzip(data_zip_path, workdir)
-    data_dir = os.path.join(workdir, 'dropbox_data')
-    print("data loaded and stored at %s" % data_dir)
 
-    return data_dir
+    return
 
 def get_amass_cmu_sketch_data(workdir):
 
