@@ -40,7 +40,7 @@ def download_and_unzip(dropbox_url, workdir):
     return
 
 
-def generate_mp4(image_dir, video_path, frame_rate=15, img_ext=None):
+def generate_mp4(image_dir, video_path, frame_rate=25, img_ext=None):
 
     if img_ext is None:
         test_img = os.listdir(image_dir)[0]
