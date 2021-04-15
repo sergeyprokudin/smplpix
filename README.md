@@ -29,12 +29,6 @@ We provide some preprocessed data which allows you to run and test the training 
 python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/smplpix_subject0_v2.zip?dl=0' --workdir='./logs' --n_epochs=500 --eval_every_nth_epoch=25  --aug_prob=0.5 --downsample_factor=4  --sched_patience=1
 ```
 
-### Render avatar in novel poses and expressions
-
-Once trained, you can render the neural avatar with novel poses and hand\face expressions. 
-
-You can download one of the many motion sequences from the AMASS human motion library, and run the following the script
-
 ## Citation
 
 If you find our work useful in your research, please consider citing:
