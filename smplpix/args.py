@@ -16,7 +16,7 @@ def get_smplpix_arguments():
     parser.add_argument('--resume',
                         dest='resume',
                         help='whether to continue training process given the checkpoint in workdir',
-                        default=True)
+                        default=False)
     parser.add_argument('--data_url',
                         dest='data_url',
                         help='Dropbox URL containing zipped dataset',

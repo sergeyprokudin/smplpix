@@ -6,6 +6,7 @@
 import os
 import shutil
 import pprint
+import torch
 from torch.utils.data import DataLoader
 
 from smplpix.args import get_smplpix_arguments
