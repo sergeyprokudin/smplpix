@@ -55,7 +55,7 @@ def main():
         os.makedirs(args.workdir)
     
     log_dir = os.path.join(args.workdir, 'logs')
-    os.makedirs(log_dir)
+    os.makedirs(log_dir, exist_ok=True)
     
     ckpt_path = os.path.join(args.workdir, 'network.h5')
 
