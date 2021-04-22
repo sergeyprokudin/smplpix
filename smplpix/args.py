@@ -74,7 +74,7 @@ def get_smplpix_arguments():
                         dest='aug_prob',
                         type=float,
                         help='amount of validation set evaluations with no improvement after which LR will be reduced',
-                        default=0.25)
+                        default=0.8)
     parser.add_argument('--save_target',
                         dest='save_target',
                         help='whether to save target images during evaluation',
