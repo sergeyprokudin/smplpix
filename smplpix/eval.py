@@ -6,6 +6,7 @@
 import os
 import shutil
 import pprint
+import torch
 from torch.utils.data import DataLoader
 
 from smplpix.args import get_smplpix_arguments
@@ -54,6 +55,7 @@ def main():
     unet = UNet(in_channels=args.n_input_channels, out_channels=args.n_output_channels,
                 n_blocks=args.n_unet_blocks, up_mode='resizeconv_linear').to(args.device)
 
+    print("loading the model from checkpoint: %s" % ckpt_path)
     unet.load_state_dict(torch.load(ckpt_path))
     unet.eval()
     generate_eval_video(args, args.data_dir, unet, save_target=args.save_target)
