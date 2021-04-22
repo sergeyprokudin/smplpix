@@ -53,7 +53,7 @@ def main():
 
     print("defining the neural renderer model (U-Net)...")
     unet = UNet(in_channels=args.n_input_channels, out_channels=args.n_output_channels,
-                n_blocks=args.n_unet_blocks, up_mode='resizeconv_linear').to(args.device)
+                n_blocks=args.n_unet_blocks, dim=2, up_mode='resizeconv_linear').to(args.device)
 
     print("loading the model from checkpoint: %s" % ckpt_path)
     unet.load_state_dict(torch.load(ckpt_path))
