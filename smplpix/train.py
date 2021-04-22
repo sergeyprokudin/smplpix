@@ -54,7 +54,7 @@ def main():
     if not os.path.exists(args.workdir):
         os.makedirs(args.workdir)
     
-    log_dir = os.path.join(args.workdir, args.name, 'logs')
+    log_dir = os.path.join(args.workdir, 'logs')
     os.makedirs(log_dir)
     
     ckpt_path = os.path.join(args.workdir, 'network.h5')
