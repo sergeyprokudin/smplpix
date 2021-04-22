@@ -49,16 +49,11 @@ def main():
     print("ARGUMENTS:")
     pprint.pprint(args)
 
-    if not args.resume and os.path.exists(args.workdir):
-        shutil.rmtree(args.workdir)
-
     if not os.path.exists(args.workdir):
         os.makedirs(args.workdir)
     
     log_dir = os.path.join(args.workdir, 'logs')
     os.makedirs(log_dir, exist_ok=True)
-    
-    ckpt_path = os.path.join(args.workdir, 'network.h5')
 
     if args.data_url is not None:
         download_and_unzip(args.data_url, args.workdir)
@@ -91,7 +86,8 @@ def main():
     print("defining the neural renderer model (U-Net)...")
     unet = UNet(in_channels=args.n_input_channels, out_channels=args.n_output_channels,
                 n_blocks=args.n_unet_blocks, dim=2, up_mode='resizeconv_linear').to(args.device)
-
+    ckpt_path = os.path.join(args.workdir, 'network.h5')
+    
     if args.resume and os.path.exists(ckpt_path):
         print("found checkpoint, resuming: %s" % ckpt_path)
         unet.load_state_dict(torch.load(ckpt_path))
