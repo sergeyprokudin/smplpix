@@ -75,11 +75,6 @@ def get_smplpix_arguments():
                         type=float,
                         help='amount of validation set evaluations with no improvement after which LR will be reduced',
                         default=0.25)
-    parser.add_argument('--eval_dir',
-                        dest='eval_dir',
-                        help='directory with evaluation input and target images to the network, should contain'
-                             'input and output subfolders',
-                        default=None)
     parser.add_argument('--save_target',
                         dest='save_target',
                         help='whether to save target images during evaluation',

@@ -56,7 +56,7 @@ def main():
 
     unet.load_state_dict(torch.load(ckpt_path))
     unet.eval()
-    generate_eval_video(args, args.eval_dir, unet, save_target=args.save_target)
+    generate_eval_video(args, args.data_dir, unet, save_target=args.save_target)
 
     return
 
