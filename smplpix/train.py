@@ -92,7 +92,7 @@ def main():
                 n_blocks=args.n_unet_blocks, dim=2, up_mode='resizeconv_linear').to(args.device)
 
     if args.resume and os.path.exists(ckpt_path):
-        print("found checkpoint: %s" % ckpt_path)
+        print("found checkpoint, resuming: %s" % ckpt_path)
         unet.load_state_dict(torch.load(ckpt_path))
 
     print("starting training...")

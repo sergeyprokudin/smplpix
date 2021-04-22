@@ -14,7 +14,7 @@ def get_smplpix_arguments():
                              'input and output subfolders',
                         default=None)
     parser.add_argument('--resume',
-                        dest='data_dir',
+                        dest='resume',
                         help='whether to continue training process given the checkpoint in workdir',
                         default=True)
     parser.add_argument('--data_url',
