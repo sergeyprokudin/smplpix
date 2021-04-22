@@ -26,7 +26,7 @@ to create your own neural avatar given monocular video of a human moving in fron
 We provide some preprocessed data which allows you to run and test the training pipeline right away:
 
 ```
-python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/smplpix_subject0_v2.zip?dl=0' --workdir='./logs' --n_epochs=500 --eval_every_nth_epoch=25  --aug_prob=0.5 --downsample_factor=4  --sched_patience=1
+python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/smplpix_subject0_v2.zip?dl=0'
 ```
 
 ## Citation
