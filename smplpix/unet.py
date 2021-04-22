@@ -768,7 +768,7 @@ class UNet(nn.Module):
             activation: Union[str, nn.Module] = 'relu',
             normalization: str = 'batch',
             full_norm: bool = True,
-            dim: int = 3,
+            dim: int = 2,
             conv_mode: str = 'same',
     ):
         super().__init__()

@@ -13,6 +13,10 @@ def get_smplpix_arguments():
                         help='directory with training input and target images to the network, should contain'
                              'input and output subfolders',
                         default=None)
+    parser.add_argument('--resume',
+                        dest='data_dir',
+                        help='whether to continue training process given the checkpoint in workdir',
+                        default=True)
     parser.add_argument('--data_url',
                         dest='data_url',
                         help='Dropbox URL containing zipped dataset',
@@ -71,6 +75,15 @@ def get_smplpix_arguments():
                         type=float,
                         help='amount of validation set evaluations with no improvement after which LR will be reduced',
                         default=0.25)
+    parser.add_argument('--eval_dir',
+                        dest='eval_dir',
+                        help='directory with evaluation input and target images to the network, should contain'
+                             'input and output subfolders',
+                        default=None)
+    parser.add_argument('--save_target',
+                        dest='save_target',
+                        help='whether to save target images during evaluation',
+                        default=False)
 
     args = parser.parse_args()
 

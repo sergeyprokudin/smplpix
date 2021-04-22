@@ -4,6 +4,7 @@
 #
 
 import os
+import shutil
 import pprint
 from torch.utils.data import DataLoader
 
@@ -16,7 +17,6 @@ from smplpix.utils import download_and_unzip
 
 def generate_eval_video(args, data_dir, unet, frame_rate=25, save_target=False, save_input=True):
 
-    # we will now use the network trained on 20 sketches to convert the rest of AMASS renders
     print("rendering SMPLpix predictions for %s..." % data_dir)
     data_part_name = os.path.split(data_dir)[-1]
 
@@ -45,10 +45,18 @@ def main():
           "******************************************************************************************\n")
 
     args = get_smplpix_arguments()
-    print("ARGS:")
+    print("ARGUMENTS:")
     pprint.pprint(args)
 
-    log_dir = os.path.join(args.workdir, 'logs')
+    if not args.resume and os.path.exists(args.workdir):
+        shutil.rmtree(args.workdir)
+
+    if not os.path.exists(args.workdir):
+        os.makedirs(args.workdir)
+    
+    log_dir = os.path.join(args.workdir, args.name, 'logs')
+    os.makedirs(log_dir)
+    
     ckpt_path = os.path.join(args.workdir, 'network.h5')
 
     if args.data_url is not None:
@@ -81,7 +89,11 @@ def main():
 
     print("defining the neural renderer model (U-Net)...")
     unet = UNet(in_channels=args.n_input_channels, out_channels=args.n_output_channels,
-                n_blocks=args.n_unet_blocks, dim=2, up_mode='resizeconv_linear').to(args.device)
+                n_blocks=args.n_unet_blocks, up_mode='resizeconv_linear').to(args.device)
+
+    if args.resume and os.path.exists(ckpt_path):
+        print("found checkpoint: %s" % ckpt_path)
+        unet.load_state_dict(torch.load(ckpt_path))
 
     print("starting training...")
     finished = False
