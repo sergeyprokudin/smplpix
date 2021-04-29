@@ -1,6 +1,6 @@
-![](https://user-images.githubusercontent.com/8117267/116534266-9b821180-a8e2-11eb-90c8-b6c565e335a8.mp4)
-_**Left**: SMPL-X mesh registered with SMPLify-X method, **middle**: SMPLpix render, **right**: ground truth video_
+![video](https://user-images.githubusercontent.com/8117267/116534266-9b821180-a8e2-11eb-90c8-b6c565e335a8.mp4)
 
+_**Left**: SMPL-X mesh registered with SMPLify-X method, **middle**: SMPLpix render, **right**: ground truth video_
 
 
 # SMPLpix: Neural Avatars from Deformable 3D Models
