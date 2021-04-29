@@ -105,12 +105,12 @@ def main():
         print("training interrupted, generating final animations...")
         generate_eval_video(args, train_dir, unet, save_target=True)
         generate_eval_video(args, val_dir, unet, save_target=True)
-        generate_eval_video(args, test_dir, unet, save_target=False)
+        generate_eval_video(args, test_dir, unet, save_target=True)
 
     if finished:
         generate_eval_video(args, train_dir, unet, save_target=True)
         generate_eval_video(args, val_dir, unet, save_target=True)
-        generate_eval_video(args, test_dir, unet, save_target=False)
+        generate_eval_video(args, test_dir, unet, save_target=True)
 
     return
 
