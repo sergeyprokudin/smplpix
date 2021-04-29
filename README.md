@@ -42,13 +42,17 @@ python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/sm
 
 https://user-images.githubusercontent.com/8117267/116543423-23214d80-a8ee-11eb-9ded-86af17c56549.mp4
 
-_**Left**: [FLAME](https://flame.is.tue.mpg.de/) face model inferred with [DECA](https://github.com/YadiraF/DECA), **middle**: ground truth test video, **right**: SMPLpix render.  Thanks to [Maria Paola Forte](https://www.is.mpg.de/~Forte) for providing the sequence._
+_**Left**: [FLAME](https://flame.is.tue.mpg.de/) face model inferred with [DECA](https://github.com/YadiraF/DECA), **middle**: ground truth test video, **right**: SMPLpix render._
+
+Thanks to [Maria Paola Forte](https://www.is.mpg.de/~Forte) for providing the sequence.
 
 ### Few shot artistic neural style transfer
 
 https://user-images.githubusercontent.com/8117267/116544826-e9514680-a8ef-11eb-8682-0ea8d19d0d5e.mp4
 
-_**Left**: rendered AMASS meshes, **right**: generated SMPLpix animations. Credits to [Alexander Kabarov](blackocher@gmail.com) for providing the training sketches. See [the video](https://youtu.be/JY9t4xUAouk?t=255) for details._
+_**Left**: rendered AMASS meshes, **right**: generated SMPLpix animations. See [the explanatory video](https://youtu.be/JY9t4xUAouk?t=255) for details._
+
+Credits to [Alexander Kabarov](blackocher@gmail.com) for providing the training sketches.
 
 ## Citation
 
