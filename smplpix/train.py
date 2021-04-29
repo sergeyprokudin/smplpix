@@ -88,12 +88,19 @@ def main():
     print("defining the neural renderer model (U-Net)...")
     unet = UNet(in_channels=args.n_input_channels, out_channels=args.n_output_channels,
                 n_blocks=args.n_unet_blocks, dim=2, up_mode='resizeconv_linear').to(args.device)
-    ckpt_path = os.path.join(args.workdir, 'network.h5')
+
+    if args.checkpoint_path is None:
+        ckpt_path = os.path.join(args.workdir, 'network.h5')
+    else:
+        ckpt_path = args.checkpoint_path
     
     if args.resume and os.path.exists(ckpt_path):
-        print("found checkpoint, resuming: %s" % ckpt_path)
+        print("found checkpoint, resuming from: %s" % ckpt_path)
         unet.load_state_dict(torch.load(ckpt_path))
-
+    if not args.resume:
+        print("starting training from scratch, cleaning the log dirs...")
+        shutil.rmtree(log_dir)
+    
     print("starting training...")
     finished = False
     try:
