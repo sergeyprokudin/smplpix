@@ -57,7 +57,7 @@ Thanks to [Maria Paola Forte](https://www.is.mpg.de/~Forte) for providing the se
 
 https://user-images.githubusercontent.com/8117267/116544826-e9514680-a8ef-11eb-8682-0ea8d19d0d5e.mp4
 
-_**Left**: rendered [AMASS](https://amass.is.tue.mpg.de/) motion sequences, **right**: generated SMPLpix animations. See [the explanatory video](https://youtu.be/JY9t4xUAouk?t=255) for details._
+_**Left**: rendered [AMASS](https://amass.is.tue.mpg.de/) motion sequence, **right**: generated SMPLpix animations. See [the explanatory video](https://youtu.be/JY9t4xUAouk?t=255) for details._
 
 Credits to [Alexander Kabarov](mailto:blackocher@gmail.com) for providing the training sketches.
 
