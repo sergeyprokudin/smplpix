@@ -27,7 +27,7 @@ def train(model, train_dataloader, val_dataloader, log_dir, ckpt_path, device,
         model.train()
         torch.save(model.state_dict(), ckpt_path)
 
-        for batch_idx, (x, ytrue, img_names) in tqdm(enumerate(train_dataloader)):
+        for batch_idx, (x, ytrue, img_names) in enumerate(train_dataloader):
             x, ytrue = x.to(device), ytrue.to(device)
             ypred = model(x)
             vgg_loss = criterion_l1(vgg(ypred), vgg(ytrue))
