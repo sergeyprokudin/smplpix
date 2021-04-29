@@ -57,7 +57,7 @@ def main():
 
     if args.data_url is not None:
         download_and_unzip(args.data_url, args.workdir)
-        args.data_dir = os.path.join(args.workdir, 'data')
+        args.data_dir = os.path.join(args.workdir, 'smplpix_data')
 
     train_dir = os.path.join(args.data_dir, 'train')
     val_dir = os.path.join(args.data_dir, 'validation')
