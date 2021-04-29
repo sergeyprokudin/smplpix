@@ -1,5 +1,6 @@
 https://user-images.githubusercontent.com/8117267/116540639-b9537480-a8ea-11eb-81ca-57d473147fbd.mp4
 
+<video width="100%" height="100%" autoplay="" muted="" controls="" loop="" preload="metadata" poster="https://storage.googleapis.com/nerf_data/website_renders/images/orchid.jpg"> <source src="https://storage.googleapis.com/nerf_data/website_renders/orchid.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
 
 _**Left**: [SMPL-X](https://smpl-x.is.tue.mpg.de/) human mesh registered with [SMPLify-X](https://smpl-x.is.tue.mpg.de/), **middle**: SMPLpix render, **right**: ground truth video._
 
