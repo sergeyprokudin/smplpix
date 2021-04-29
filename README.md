@@ -23,12 +23,17 @@ pip3 install git+https://github.com/sergeyprokudin/smplpix
 
 ## Demo
 
+| Description      | Link |
+| ----------- | ----------- |
+| Process a video into a SMPLpix dataset| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google/nerfies/blob/main/notebooks/Nerfies_Capture_Processing.ipynb)|
+| Train SMPLpix| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google/nerfies/blob/main/notebooks/Nerfies_Training.ipynb)|
+
 ### Prepare the data
 
-_Coming soon_: we will provide the Colab notebook for preparing SMPLpix training dataset. This will allow you 
+We provide the Colab notebook for preparing SMPLpix training dataset. This will allow you 
 to create your own neural avatar given monocular video of a human moving in front of the camera.
 
-### Run training
+### Run demo training
 
 We provide some preprocessed data which allows you to run and test the training pipeline right away:
 
