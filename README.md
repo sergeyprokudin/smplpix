@@ -2,7 +2,7 @@
 https://user-images.githubusercontent.com/8117267/116540639-b9537480-a8ea-11eb-81ca-57d473147fbd.mp4
 
 
-_**Left**: SMPL-X human mesh registered with [SMPLify-X](https://smpl-x.is.tue.mpg.de/), **middle**: SMPLpix render, **right**: ground truth video._
+_**Left**: [SMPL-X](https://smpl-x.is.tue.mpg.de/) human mesh registered with [SMPLify-X](https://smpl-x.is.tue.mpg.de/), **middle**: SMPLpix render, **right**: ground truth video._
 
 
 # SMPLpix: Neural Avatars from Deformable 3D Models
@@ -38,11 +38,11 @@ python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/sm
 
 ## More examples
 
-### Rendering animatable faces
+### Rendering faces
 
 https://user-images.githubusercontent.com/8117267/116543423-23214d80-a8ee-11eb-9ded-86af17c56549.mp4
 
-_**Left**: [FLAME](https://flame.is.tue.mpg.de/) face model inferred with [DECA](https://github.com/YadiraF/DECA), **middle**: SMPLpix render, **right**: ground truth test video. Thanks to [Maria Paola Forte](https://www.is.mpg.de/~Forte) for providing the sequence._
+_**Left**: [FLAME](https://flame.is.tue.mpg.de/) face model inferred with [DECA](https://github.com/YadiraF/DECA), **middle**: ground truth test video, **right**: SMPLpix render.  Thanks to [Maria Paola Forte](https://www.is.mpg.de/~Forte) for providing the sequence._
 
 ### Few shot artistic neural style transfer
 
