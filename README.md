@@ -33,8 +33,29 @@ to create your own neural avatar given monocular video of a human moving in fron
 We provide some preprocessed data which allows you to run and test the training pipeline right away:
 
 ```
-python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/smplpix_subject0_v2.zip?dl=0'
+pip3 install git+https://github.com/sergeyprokudin/smplpix
+cd smplpix
+python setup.py install
+python smplpix/train.py --workdir='/content/smplpix_logs/' --data_url='https://www.dropbox.com/s/coapl05ahqalh09/smplpix_data_test_final.zip?dl=0'
 ```
+
+### Train on your own data
+
+You can train SMPLpix on your own data by specifying the path to the root directory with data:
+
+```
+python smplpix/train.py --workdir='/content/smplpix_logs/' --data_dir='/path/to/data'
+```
+
+The directory should contain train, validation and test folders, each of which should contain input and output folders. Check the structure of [the demo dataset](https://www.dropbox.com/s/coapl05ahqalh09/smplpix_data_test_final.zip?dl=0) for reference.
+
+You can also specify various parameters of training via command line: 
+
+```
+python smplpix/train.py --workdir='/content/smplpix_logs/' --data_dir='/path/to/data' --downsample_factor=2 --n_epochs=100 --n_output_channels==3
+```
+
+Check the (args.py)[https://github.com/sergeyprokudin/smplpix/blob/main/smplpix/args.py] for the full list of parameters.
 
 ## More examples
 
