@@ -78,7 +78,7 @@ _**Left**: [FLAME](https://flame.is.tue.mpg.de/) face model inferred with [DECA]
 
 Thanks to [Maria Paola Forte](https://www.is.mpg.de/~Forte) for providing the sequence.
 
-### Few shot artistic neural style transfer
+### Few-shot artistic neural style transfer
 
 https://user-images.githubusercontent.com/8117267/116544826-e9514680-a8ef-11eb-8682-0ea8d19d0d5e.mp4
 
