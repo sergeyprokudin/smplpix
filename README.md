@@ -38,6 +38,13 @@ python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/sm
 
 ## More examples
 
+### Animating with novel poses
+
+https://user-images.githubusercontent.com/8117267/116546566-0edf4f80-a8f2-11eb-9fb2-a173c0018a4e.mp4
+
+_**Left**: poses from the test video sequence, **right**: SMPLpix renders. 
+
+
 ### Rendering faces
 
 https://user-images.githubusercontent.com/8117267/116543423-23214d80-a8ee-11eb-9ded-86af17c56549.mp4
