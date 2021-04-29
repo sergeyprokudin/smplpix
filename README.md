@@ -1,5 +1,7 @@
+<video width="320" height="240" autoplay loop>
+  <source src="https://user-images.githubusercontent.com/8117267/116534266-9b821180-a8e2-11eb-90c8-b6c565e335a8.mp4" type="video/mp4" />
+</video>
 
-https://user-images.githubusercontent.com/8117267/116534266-9b821180-a8e2-11eb-90c8-b6c565e335a8.mp4
 
 
 # SMPLpix: Neural Avatars from Deformable 3D Models
