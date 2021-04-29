@@ -40,7 +40,8 @@ We provide some preprocessed data which allows you to run and test the training 
 pip3 install git+https://github.com/sergeyprokudin/smplpix
 cd smplpix
 python setup.py install
-python smplpix/train.py --workdir='/content/smplpix_logs/' --data_url='https://www.dropbox.com/s/coapl05ahqalh09/smplpix_data_test_final.zip?dl=0'
+python smplpix/train.py --workdir='/content/smplpix_logs/' \
+                        --data_url='https://www.dropbox.com/s/coapl05ahqalh09/smplpix_data_test_final.zip?dl=0'
 ```
 
 ### Train on your own data
@@ -48,7 +49,8 @@ python smplpix/train.py --workdir='/content/smplpix_logs/' --data_url='https://w
 You can train SMPLpix on your own data by specifying the path to the root directory with data:
 
 ```
-python smplpix/train.py --workdir='/content/smplpix_logs/' --data_dir='/path/to/data'
+python smplpix/train.py --workdir='/content/smplpix_logs/' \
+                        --data_dir='/path/to/data'
 ```
 
 The directory should contain train, validation and test folders, each of which should contain input and output folders. Check the structure of [the demo dataset](https://www.dropbox.com/s/coapl05ahqalh09/smplpix_data_test_final.zip?dl=0) for reference.
@@ -56,7 +58,11 @@ The directory should contain train, validation and test folders, each of which s
 You can also specify various parameters of training via command line: 
 
 ```
-python smplpix/train.py --workdir='/content/smplpix_logs/' --data_dir='/path/to/data' --downsample_factor=2 --n_epochs=100 --n_output_channels==3
+python smplpix/train.py --workdir='/content/smplpix_logs/' \
+                        --data_dir='/path/to/data' \
+                        --downsample_factor=2 \
+                        --n_epochs=100 \
+                        --n_output_channels==3
 ```
 
 Check the [args.py](https://github.com/sergeyprokudin/smplpix/blob/main/smplpix/args.py) for the full list of parameters.
