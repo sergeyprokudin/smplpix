@@ -1,4 +1,4 @@
-# Main SMPLpix Training Script
+# Main SMPLpix Evaluation Script
 #
 # (c) Sergey Prokudin (sergey.prokudin@gmail.com), 2021
 #
