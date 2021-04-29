@@ -2,7 +2,7 @@
 https://user-images.githubusercontent.com/8117267/116540639-b9537480-a8ea-11eb-81ca-57d473147fbd.mp4
 
 
-_**Left**: SMPL-X mesh registered with SMPLify-X method, **middle**: SMPLpix render, **right**: ground truth video_
+_**Left**: SMPL-X human mesh registered with [SMPLify-X](https://smpl-x.is.tue.mpg.de/), **middle**: SMPLpix render, **right**: ground truth._
 
 
 # SMPLpix: Neural Avatars from Deformable 3D Models
@@ -35,8 +35,6 @@ We provide some preprocessed data which allows you to run and test the training 
 ```
 python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/smplpix_subject0_v2.zip?dl=0'
 ```
-
-https://user-images.githubusercontent.com/8117267/116541164-6a5a0f00-a8eb-11eb-96a7-5a5344697e37.mp4
 
 
 ## Citation
