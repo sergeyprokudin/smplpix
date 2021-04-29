@@ -5,7 +5,7 @@ https://user-images.githubusercontent.com/8117267/116540639-b9537480-a8ea-11eb-8
 _**Left**: [SMPL-X](https://smpl-x.is.tue.mpg.de/) human mesh registered with [SMPLify-X](https://smpl-x.is.tue.mpg.de/), **middle**: SMPLpix render, **right**: ground truth video._
 
 
-# SMPLpix: Neural Avatars from Deformable 3D Models
+# SMPLpix: Neural Avatars from 3D Human Models
 
 *SMPLpix* neural rendering framework combines deformable 3D models such as [SMPL-X](https://smpl-x.is.tue.mpg.de/)
 with the power of image-to-image translation frameworks (aka [pix2pix](https://phillipi.github.io/pix2pix/) models).
