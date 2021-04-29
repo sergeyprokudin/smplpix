@@ -55,9 +55,14 @@ You can also specify various parameters of training via command line:
 ```
 python smplpix/train.py --workdir='/content/smplpix_logs/' \
                         --data_dir='/path/to/data' \
-                        --downsample_factor=2 \
-                        --n_epochs=100 \
-                        --n_output_channels==3
+                        --downsample_factor=4 \
+                        --n_epochs=200 \
+                        --sched_patience=2 \
+                        --batch_size=4 \
+                        --n_unet_blocks=5 \
+                        --n_input_channels=3 \
+                        --n_output_channels=3 \
+                        --eval_every_nth_epoch=10
 ```
 
 Check the [args.py](https://github.com/sergeyprokudin/smplpix/blob/main/smplpix/args.py) for the full list of parameters.
