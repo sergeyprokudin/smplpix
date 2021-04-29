@@ -50,8 +50,15 @@ def main():
     print("ARGUMENTS:")
     pprint.pprint(args)
 
-    ckpt_path = os.path.join(args.workdir, 'network.h5')
-
+    if args.checkpoint_path is None:
+        print("no model checkpoint was specified, looking in the log directory...")
+        ckpt_path = os.path.join(args.workdir, 'network.h5')
+    else:
+        ckpt_path = args.checkpoint_path
+    if not os.path.exists(ckpt_path):
+        print("checkpoint %s not found!" % ckpt_path)
+        return
+    
     print("defining the neural renderer model (U-Net)...")
     unet = UNet(in_channels=args.n_input_channels, out_channels=args.n_output_channels,
                 n_blocks=args.n_unet_blocks, dim=2, up_mode='resizeconv_linear').to(args.device)

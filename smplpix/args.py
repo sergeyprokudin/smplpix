@@ -79,7 +79,10 @@ def get_smplpix_arguments():
                         dest='save_target',
                         help='whether to save target images during evaluation',
                         default=False)
-
+    parser.add_argument('--checkpoint_path',
+                        dest='checkpoint_path',
+                        help='path to checkpoint (for evaluation)',
+                        default=None)
     args = parser.parse_args()
 
     return args
