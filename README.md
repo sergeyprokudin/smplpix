@@ -14,11 +14,6 @@ Please check our [WACV 2021 paper](https://arxiv.org/abs/2008.06872) or a [5-min
 _**Note**_: this repository is a re-implementation of the original framework, made by the same author after the end of internship.
 It **does not contain** the original Amazon multi-subject training data and code, and uses full mesh rasterizations as inputs rather than point projections (as described [here](https://youtu.be/JY9t4xUAouk?t=241)).
 
-## Installation
-
-```
-pip3 install git+https://github.com/sergeyprokudin/smplpix
-```
 
 ## Demo
 
