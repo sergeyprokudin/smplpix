@@ -2,7 +2,7 @@
 https://user-images.githubusercontent.com/8117267/116540639-b9537480-a8ea-11eb-81ca-57d473147fbd.mp4
 
 
-_**Left**: SMPL-X human mesh registered with [SMPLify-X](https://smpl-x.is.tue.mpg.de/), **middle**: SMPLpix render, **right**: ground truth test video._
+_**Left**: SMPL-X human mesh registered with [SMPLify-X](https://smpl-x.is.tue.mpg.de/), **middle**: SMPLpix render, **right**: ground truth video._
 
 
 # SMPLpix: Neural Avatars from Deformable 3D Models
