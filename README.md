@@ -1,6 +1,6 @@
-<div class="row post-image-bg" markdown="0">
-    <video width="99%" height="540" autoplay loop muted markdown="0">
-        <source src="https://user-images.githubusercontent.com/8117267/116534266-9b821180-a8e2-11eb-90c8-b6c565e335a8.mp4" type="video/mp4" markdown="0" >
+<div class="row post-image-bg">
+    <video width="99%" height="540" autoplay loop>
+        <source src="https://user-images.githubusercontent.com/8117267/116534266-9b821180-a8e2-11eb-90c8-b6c565e335a8.mp4" type="video/mp4">
     </video>
 </div>
 
