@@ -26,7 +26,7 @@ pip3 install git+https://github.com/sergeyprokudin/smplpix
 | Description      | Link |
 | ----------- | ----------- |
 | Process a video into a SMPLpix dataset| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google/nerfies/blob/main/notebooks/Nerfies_Capture_Processing.ipynb)|
-| Train SMPLpix| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google/nerfies/blob/main/notebooks/Nerfies_Training.ipynb)|
+| Train SMPLpix| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/sergeyprokudin/smplpix/blob/main/colab_notebooks/SMPLpix_training.ipynb)|
 
 ### Prepare the data
 
