@@ -36,6 +36,13 @@ We provide some preprocessed data which allows you to run and test the training 
 python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/smplpix_subject0_v2.zip?dl=0'
 ```
 
+## More examples
+
+
+https://user-images.githubusercontent.com/8117267/116543423-23214d80-a8ee-11eb-9ded-86af17c56549.mp4
+
+_**Left**: [FLAME](https://flame.is.tue.mpg.de/) face model inferred with [DECA](https://github.com/YadiraF/DECA), **middle**: SMPLpix render, **right**: ground truth video._
+
 
 ## Citation
 
