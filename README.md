@@ -1,3 +1,7 @@
+
+https://user-images.githubusercontent.com/8117267/116534266-9b821180-a8e2-11eb-90c8-b6c565e335a8.mp4
+
+
 # SMPLpix: Neural Avatars from Deformable 3D Models
 
 *SMPLpix* neural rendering framework combines two major components: deformable 3D models such as [SMPL-X](https://smpl-x.is.tue.mpg.de/)
