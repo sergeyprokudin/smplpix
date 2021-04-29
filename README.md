@@ -30,7 +30,7 @@ pip3 install git+https://github.com/sergeyprokudin/smplpix
 ### Prepare the data
 
 We provide the Colab notebook for preparing SMPLpix training dataset. This will allow you 
-to create your own neural avatar given monocular video of a human moving in front of the camera.
+to create your own neural avatar given [monocular video of a human moving in front of the camera](https://www.dropbox.com/s/rjqwf894ovso218/smplpix_test_video_na.mp4?dl=0).
 
 ### Run demo training
 
