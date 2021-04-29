@@ -76,5 +76,5 @@ If you find our work useful in your research, please consider citing:
 
 ## License
 
-This library is licensed under the MIT-0 License. See the LICENSE file. The library may not be used for pornographic purposes or to generate pornographic material whether commercial or not.
+See the LICENSE file.
 
