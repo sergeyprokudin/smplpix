@@ -1,3 +1,4 @@
+![smplpix_demo](https://user-images.githubusercontent.com/8117267/116595226-621dc600-a923-11eb-85d4-f52a5b9f265c.gif)
 
 https://user-images.githubusercontent.com/8117267/116540639-b9537480-a8ea-11eb-81ca-57d473147fbd.mp4
 
