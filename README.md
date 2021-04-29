@@ -36,6 +36,9 @@ We provide some preprocessed data which allows you to run and test the training 
 python smplpix/train.py --data_url='https://www.dropbox.com/s/gcmsf7t1v0snu6i/smplpix_subject0_v2.zip?dl=0'
 ```
 
+https://user-images.githubusercontent.com/8117267/116541164-6a5a0f00-a8eb-11eb-96a7-5a5344697e37.mp4
+
+
 ## Citation
 
 If you find our work useful in your research, please consider citing:
