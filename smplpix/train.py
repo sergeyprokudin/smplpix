@@ -94,10 +94,10 @@ def main():
     else:
         ckpt_path = args.checkpoint_path
     
-    if args.resume and os.path.exists(ckpt_path):
+    if args.resume_training and os.path.exists(ckpt_path):
         print("found checkpoint, resuming from: %s" % ckpt_path)
         unet.load_state_dict(torch.load(ckpt_path))
-    if not args.resume:
+    if not args.resume_training:
         print("starting training from scratch, cleaning the log dirs...")
         shutil.rmtree(log_dir)
     
