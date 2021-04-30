@@ -65,12 +65,12 @@ def get_smplpix_arguments():
                         dest='eval_every_nth_epoch',
                         type=int,
                         help='evaluate on validation data every nth epoch',
-                        default=25)
+                        default=10)
     parser.add_argument('--sched_patience',
                         dest='sched_patience',
                         type=int,
                         help='amount of validation set evaluations with no improvement after which LR will be reduced',
-                        default=5)
+                        default=3)
     parser.add_argument('--aug_prob',
                         dest='aug_prob',
                         type=float,
@@ -80,7 +80,7 @@ def get_smplpix_arguments():
                         dest='save_target',
                         type=int,
                         help='whether to save target images during evaluation',
-                        default=False)
+                        default=1)
     parser.add_argument('--checkpoint_path',
                         dest='checkpoint_path',
                         help='path to checkpoint (for evaluation)',
