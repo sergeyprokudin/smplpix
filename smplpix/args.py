@@ -15,7 +15,6 @@ def get_smplpix_arguments():
                         default=None)
     parser.add_argument('--resume_training',
                         dest='resume_training',
-                        type=bool,
                         help='whether to continue training process given the checkpoint in workdir',
                         default=False)
     parser.add_argument('--data_url',
@@ -78,7 +77,6 @@ def get_smplpix_arguments():
                         default=0.8)
     parser.add_argument('--save_target',
                         dest='save_target',
-                        type=bool,
                         help='whether to save target images during evaluation',
                         default=False)
     parser.add_argument('--checkpoint_path',
