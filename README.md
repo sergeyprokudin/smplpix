@@ -36,7 +36,6 @@ We provide some preprocessed data which allows you to run and test the training 
 ```
 pip3 install git+https://github.com/sergeyprokudin/smplpix
 cd smplpix
-python setup.py install
 python smplpix/train.py --workdir='/content/smplpix_logs/' \
                         --data_url='https://www.dropbox.com/s/coapl05ahqalh09/smplpix_data_test_final.zip?dl=0'
 ```
