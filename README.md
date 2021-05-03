@@ -11,7 +11,7 @@ with the power of image-to-image translation frameworks (aka [pix2pix](https://p
 
 Please check our [WACV 2021 paper](https://arxiv.org/abs/2008.06872) or a [5-minute explanatory video](https://www.youtube.com/watch?v=JY9t4xUAouk) for more details on the framework. 
 
-_**Note**_: this repository is a re-implementation of the original framework, made by the same author after the end of internship.
+_**Important note**_: this repository is a re-implementation of the original framework, made by the same author after the end of internship.
 It **does not contain** the original Amazon multi-subject, multi-view training data and code, and uses full mesh rasterizations as inputs rather than point projections (as described [here](https://youtu.be/JY9t4xUAouk?t=241)).
 
 
