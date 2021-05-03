@@ -24,6 +24,8 @@ It **does not contain** the original Amazon multi-subject, multi-view training d
 
 ### Prepare the data
 
+![demo_openpose_simplifyx](https://user-images.githubusercontent.com/8117267/116876711-8defc300-ac25-11eb-8b7b-5eab8860602c.png)
+
 We provide the Colab notebook for preparing SMPLpix training dataset. This will allow you 
 to create your own neural avatar given [monocular video of a human moving in front of the camera](https://www.dropbox.com/s/rjqwf894ovso218/smplpix_test_video_na.mp4?dl=0).
 
