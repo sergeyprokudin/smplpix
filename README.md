@@ -52,13 +52,13 @@ python smplpix/train.py --workdir='/content/smplpix_logs/' \
 
 The directory should contain train, validation and test folders, each of which should contain input and output folders. Check the structure of [the demo dataset](https://www.dropbox.com/s/coapl05ahqalh09/smplpix_data_test_final.zip?dl=0) for reference.
 
-You can also specify various parameters of training via command line: 
+You can also specify various parameters of training via command line. E.g., to reproduce the results of the demo video:
 
 ```
 python smplpix/train.py --workdir='/content/smplpix_logs/' \
-                        --data_dir='/path/to/data' \
-                        --downsample_factor=4 \
-                        --n_epochs=200 \
+                        --data_url='https://www.dropbox.com/s/coapl05ahqalh09/smplpix_data_test_final.zip?dl=0' \
+                        --downsample_factor=2 \
+                        --n_epochs=500 \
                         --sched_patience=2 \
                         --batch_size=4 \
                         --n_unet_blocks=5 \
