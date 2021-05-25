@@ -74,7 +74,7 @@ def get_smplpix_arguments():
     parser.add_argument('--aug_prob',
                         dest='aug_prob',
                         type=float,
-                        help='amount of validation set evaluations with no improvement after which LR will be reduced',
+                        help='probability that the input sample will be rotated and rescaled - higher value is recommended for data scarse scenarios',
                         default=0.8)
     parser.add_argument('--save_target',
                         dest='save_target',

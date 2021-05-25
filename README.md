@@ -109,5 +109,5 @@ If you find our work useful in your research, please consider citing:
 
 ## License
 
-See the LICENSE file.
+See the [LICENSE](https://github.com/sergeyprokudin/smplpix/blob/main/LICENSE) file.
 
