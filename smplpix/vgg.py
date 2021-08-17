@@ -14,7 +14,7 @@ class Vgg16Features(torch.nn.Module):
                  layers_weights=None):
         super(Vgg16Features, self).__init__()
         if layers_weights is None:
-            self.layers_weights = [1/32, 1 / 16, 1 / 8, 1 / 4, 1]
+            self.layers_weights = [1 / 32, 1 / 16, 1 / 8, 1 / 4, 1]
         else:
             self.layers_weights = layers_weights
 
