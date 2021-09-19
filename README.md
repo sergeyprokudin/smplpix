@@ -1,4 +1,4 @@
-https://user-images.githubusercontent.com/8117267/116595226-621dc600-a923-11eb-85d4-f52a5b9f265c.gif
+#https://user-images.githubusercontent.com/8117267/116595226-621dc600-a923-11eb-85d4-f52a5b9f265c.gif
 
 _**Left**: [SMPL-X](https://smpl-x.is.tue.mpg.de/) human mesh registered with [SMPLify-X](https://smpl-x.is.tue.mpg.de/), **middle**: SMPLpix render, **right**: ground truth video._
 
