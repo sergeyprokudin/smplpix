@@ -89,9 +89,10 @@ Thanks to [Maria Paola Forte](https://www.is.mpg.de/~Forte) for providing the se
 
 ### Few-shot artistic neural style transfer
 
-https://user-images.githubusercontent.com/8117267/116544826-e9514680-a8ef-11eb-8682-0ea8d19d0d5e.mp4
+![116544826-e9514680-a8ef-11eb-8682-0ea8d19d0d5e](https://user-images.githubusercontent.com/8117267/134177512-22d52204-e3ae-48bd-a4d1-8b6fc1914fe5.gif)
 
-_**Left**: rendered [AMASS](https://amass.is.tue.mpg.de/) motion sequence, **right**: generated SMPLpix animations. See [the explanatory video](https://youtu.be/JY9t4xUAouk?t=255) for details._
+
+_**Left**: rendered [AMASS](https://amass.is.tue.mpg.de/) motion sequence, **right**: generated SMPLpix animations. [Full video](https://user-images.githubusercontent.com/8117267/116544826-e9514680-a8ef-11eb-8682-0ea8d19d0d5e.mp4). See [the explanatory video](https://youtu.be/JY9t4xUAouk?t=255) for details._
 
 Credits to [Alexander Kabarov](mailto:blackocher@gmail.com) for providing the training sketches.
 
