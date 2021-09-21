@@ -73,9 +73,10 @@ Check the [args.py](https://github.com/sergeyprokudin/smplpix/blob/main/smplpix/
 
 ### Animating with novel poses
 
-https://user-images.githubusercontent.com/8117267/116546566-0edf4f80-a8f2-11eb-9fb2-a173c0018a4e.mp4
+![116543423-23214d80-a8ee-11eb-9ded-86af17c56549](https://user-images.githubusercontent.com/8117267/134175773-32885d04-32f4-4ff6-a3bb-fddb96575ba4.gif)
 
-**Left**: poses from the test video sequence, **right**: SMPLpix renders. 
+
+**Left**: poses from the test video sequence, **right**: SMPLpix renders. [Video](https://user-images.githubusercontent.com/8117267/116546566-0edf4f80-a8f2-11eb-9fb2-a173c0018a4e.mp4)
 
 
 ### Rendering faces
