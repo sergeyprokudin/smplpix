@@ -32,6 +32,11 @@ def get_smplpix_arguments():
                         type=int,
                         help='number of channels in the input images',
                         default=3)
+    parser.add_argument('--sigmoid_output',
+                    dest='sigmoid_output',
+                    type=int,
+                    help='whether to add sigmoid activation as a final layer',
+                    default=True)
     parser.add_argument('--n_unet_blocks',
                         dest='n_unet_blocks',
                         type=int,
