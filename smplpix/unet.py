@@ -842,6 +842,7 @@ class UNet(nn.Module):
 
         self.out_channels = out_channels
         self.in_channels = in_channels
+        self.sigmoid_output = sigmoid_output
         self.start_filts = start_filts
         self.n_blocks = n_blocks
         self.normalization = normalization
