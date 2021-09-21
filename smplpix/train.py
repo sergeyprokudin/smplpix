@@ -86,7 +86,9 @@ def main():
         val_dataloader = train_dataloader
 
     print("defining the neural renderer model (U-Net)...")
-    unet = UNet(in_channels=args.n_input_channels, out_channels=args.n_output_channels,
+    unet = UNet(in_channels=args.n_input_channels, 
+                out_channels=args.n_output_channels,
+                sigmoid_output=args.sigmoid_output,
                 n_blocks=args.n_unet_blocks, dim=2, up_mode='resizeconv_linear').to(args.device)
 
     if args.checkpoint_path is None:
