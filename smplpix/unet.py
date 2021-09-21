@@ -721,6 +721,8 @@ class UNet(nn.Module):
         attention: If ``True``, use grid attention in the decoding pathway,
             as proposed in https://arxiv.org/abs/1804.03999.
             Default: ``False``.
+        sigmoid_output: If ``True``, add sigmoid activation as final layer
+            Default: ``True``.
         full_norm: If ``True`` (default), perform normalization after each
             (transposed) convolution in the network (which is what almost
             all published neural network architectures do).
@@ -787,6 +789,7 @@ class UNet(nn.Module):
             planar_blocks: Sequence = (),
             batch_norm: str = 'unset',
             attention: bool = False,
+            sigmoid_output: bool = True,
             activation: Union[str, nn.Module] = 'relu',
             normalization: str = 'batch',
             full_norm: bool = True,
@@ -937,8 +940,10 @@ class UNet(nn.Module):
         # Uncomment the following line to temporarily store output for
         #  receptive field estimation using fornoxai/receptivefield:
         # self.feature_maps = [x]  # Currently disabled to save memory
-        return torch.sigmoid(x)
-
+        if self.sigmoid_output:
+          x = torch.sigmoid(x)
+        return x
+      
     @torch.jit.unused
     def forward_gradcp(self, x):
         """``forward()`` implementation with gradient checkpointing enabled.
