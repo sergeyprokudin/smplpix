@@ -21,8 +21,8 @@ class SMPLPixDataset(Dataset):
                  aug_scale_interval=None,
                  aug_angle_interval=None,
                  aug_translate_interval=None,
-                 input_fill_color='white',
-                 output_fill_color='white'):
+                 input_fill_color=1,
+                 output_fill_color=1):
 
         if aug_translate_interval is None:
             aug_translate_interval = [-100, 100]
