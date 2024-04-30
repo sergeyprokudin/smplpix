@@ -113,3 +113,5 @@ If you find our work useful in your research, please consider citing:
 
 See the [LICENSE](https://github.com/sergeyprokudin/smplpix/blob/main/LICENSE) file.
 
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=sergeyprokudin/smplpix)
+
